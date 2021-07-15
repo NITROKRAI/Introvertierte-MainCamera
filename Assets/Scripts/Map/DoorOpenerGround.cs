@@ -24,7 +24,7 @@ public class DoorOpenerGround: MonoBehaviour
         //doorUpFind.Unlock();
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnCollisionExit(Collision col)
     {
         Debug.Log("No contact with smth.");
         transform.position = new Vector3(transform.position.x, transform.position.y + 0.2f, transform.position.z);
