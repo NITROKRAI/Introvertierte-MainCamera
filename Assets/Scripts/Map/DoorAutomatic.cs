@@ -6,6 +6,7 @@ public class DoorAutomatic : MonoBehaviour
 {
     [SerializeField] private GameObject lockedDoor;
     private DoorUp doorUp;
+    private bool inZone = true;
     //RaycastHit[] hits;
     //LayerMask playerMask;
     // Start is called before the first frame update
@@ -23,17 +24,23 @@ public class DoorAutomatic : MonoBehaviour
 
     private void OnTriggerStay(Collider col)
     {
-        if (!(col.gameObject.tag == "Player"))
+        if (col.gameObject.tag == ("Enemy"))
         {
-            Debug.LogError("Player in Door Zone");
-            doorUp.Unlock();
-        }
-
-        if (col.gameObject.tag == "Player")
-        {
-            Debug.LogWarning("Player is out of Zone");
+            inZone = true;
+            Debug.LogWarning("Enemy in Zone");
             doorUp.Lock();
         }
+        else if (!(col.gameObject.tag == ("Enemy")))
+        {
+            inZone = false;
+            Debug.LogError("No Enemy in Zone");
+            doorUp.Unlock();            
+        }        
+    }
+
+    public bool InZone()
+    {
+        return inZone;
     }
 
 
