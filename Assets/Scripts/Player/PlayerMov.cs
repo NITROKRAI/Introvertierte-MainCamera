@@ -13,7 +13,7 @@ public class PlayerMov : MonoBehaviour
 
     Vector3 dir;
 
-    [SerializeField] private Rigidbody Rg;
+    private Rigidbody rb;
 
     public float TurnSpeed;
     public LayerMask LayerMask;
@@ -21,6 +21,7 @@ public class PlayerMov : MonoBehaviour
 
     private void Start()
     {
+        rb = GetComponent<Rigidbody>();
         //player = gameObject.AddComponent<CharacterController>();
     }
 
@@ -58,7 +59,7 @@ public class PlayerMov : MonoBehaviour
 
     private void Run(Vector3 dir)
     {
-        Rg.velocity = (new Vector3(dir.x * PlayerSpeed, 0, dir.z * PlayerSpeed));
+        rb.velocity = (new Vector3(dir.x * PlayerSpeed, 0, dir.z * PlayerSpeed));
     }
 
     private void RotatePlayer() //methode von Maik ps. Maik ist doof!
@@ -76,14 +77,14 @@ public class PlayerMov : MonoBehaviour
 
     private void Dash()
     {
-        Rg.AddForce(transform.forward * DashSpeed, ForceMode.Impulse);
+        rb.AddForce(transform.forward * DashSpeed, ForceMode.Impulse);
         isDashing = false;
     }
 
     IEnumerator Dashing()
     {
         isDashing = true;
-        Rg.AddForce(transform.forward * DashSpeed, ForceMode.Impulse);
+        rb.AddForce(transform.forward * DashSpeed, ForceMode.Impulse);
         yield return new WaitForSeconds(0.5f);
         isDashing = false;
     }
