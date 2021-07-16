@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Box
   - Enemy
+  - Equipped
+  - Not Equipped
+  - Player Bullet
+  - Enemy Bullet
   layers:
   - Default
   - TransparentFX

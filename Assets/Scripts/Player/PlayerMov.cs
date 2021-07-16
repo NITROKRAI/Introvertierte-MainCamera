@@ -30,8 +30,8 @@ public class PlayerMov : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
         dir = new Vector3(x, 0, z);
-
-        CameraTranst.position = transform.position + new Vector3(2, 12, -15);
+        dir.Normalize();
+        CameraTranst.position = transform.position + new Vector3(0, 9, -12);
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
