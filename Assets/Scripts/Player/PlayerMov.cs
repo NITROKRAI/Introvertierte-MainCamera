@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class PlayerMov : MonoBehaviour
 {
-    public Transform CameraTranst;
-
     public float PlayerSpeed;
+    private float xAxis;
+    private float zAxis;
 
     public float DashSpeed;
+    public float DashTime;
     private bool isDashing;
 
     Vector3 dir;
@@ -22,16 +23,12 @@ public class PlayerMov : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        //player = gameObject.AddComponent<CharacterController>();
     }
 
     void Update()
     {
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-        dir = new Vector3(x, 0, z);
-        dir.Normalize();
-        CameraTranst.position = transform.position + new Vector3(0, 9, -12);
+        Run(dir);
+        RotatePlayer();
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
@@ -40,11 +37,7 @@ public class PlayerMov : MonoBehaviour
             {
                 StartCoroutine(Dashing());
             }
-
-        }        
-
-        RotatePlayer();
-
+        }
     }
 
 
@@ -53,13 +46,16 @@ public class PlayerMov : MonoBehaviour
         if (!isDashing)
         {
             Run(dir);
-
         }
-
     }
 
     private void Run(Vector3 dir)
     {
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
+        dir = new Vector3(x, 0, z);
+        dir.Normalize();
+
         rb.velocity = (new Vector3(dir.x * PlayerSpeed, 0, dir.z * PlayerSpeed));
     }
 
@@ -85,8 +81,18 @@ public class PlayerMov : MonoBehaviour
     IEnumerator Dashing()
     {
         isDashing = true;
-        rb.AddForce(transform.forward * DashSpeed, ForceMode.Impulse);
-        yield return new WaitForSeconds(0.5f);
+
+        if (xAxis != 0 || zAxis != 0)
+        {
+            rb.AddForce(new Vector3(xAxis, 0, zAxis).normalized * DashSpeed, ForceMode.Impulse);
+            yield return new WaitForSeconds(DashTime);
+        }
+        else
+        {
+            rb.AddForce(transform.forward * DashSpeed, ForceMode.Impulse);
+            yield return new WaitForSeconds(DashTime);
+        }
+
         isDashing = false;
     }
 }
