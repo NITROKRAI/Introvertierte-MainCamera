@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    private Game game;
+    private GameUI game;
 
     void Start()
     {
-        game = FindObjectOfType<Game>();
+        game = FindObjectOfType<GameUI>();
     }
 
     public void Continue()

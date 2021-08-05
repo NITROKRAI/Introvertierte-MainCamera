@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Game : MonoBehaviour
+public class GameUI : MonoBehaviour
 {
     private bool isPaused = false;
+
     [SerializeField] private GameObject pauseMenu;
+
     // Start is called before the first frame update
     void Start()
     {
