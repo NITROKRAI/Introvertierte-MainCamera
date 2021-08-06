@@ -28,7 +28,6 @@ public class PlayerMov : MonoBehaviour
     void Update()
     {
         Run(dir);
-        RotatePlayer();
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
@@ -38,8 +37,9 @@ public class PlayerMov : MonoBehaviour
                 StartCoroutine(Dashing());
             }
         }
-    }
 
+        RotatePlayer();
+    }
 
     private void FixedUpdate()
     {
@@ -70,12 +70,6 @@ public class PlayerMov : MonoBehaviour
             targetRotation.z = 0;
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, TurnSpeed * Time.deltaTime);
         }
-    }
-
-    private void Dash()
-    {
-        rb.AddForce(transform.forward * DashSpeed, ForceMode.Impulse);
-        isDashing = false;
     }
 
     IEnumerator Dashing()
