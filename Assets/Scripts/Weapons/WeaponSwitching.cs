@@ -9,29 +9,35 @@ public class WeaponSwitching : MonoBehaviour
     public GameObject[] weapons = new GameObject[0];
     public GameObject WeaponHolder;
     public GameObject currentWeapon;
+    public Transform[] allchildren;
+
     void Start()
     {
         WeaponInventory();
+        //GameObject[] allchildren = this.transform.GetComponentsInChildren<GameObject>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        totalWeapons = WeaponHolder.transform.childCount;
         SelectWeapon();
+        //Transform[] allchildren = this.transform.GetComponentsInChildren<Transform>();
         weapons = GameObject.FindGameObjectsWithTag("Equipped");
+        currentWeapon = weapons[currentWeaponIndex].transform.gameObject;
     }
     void WeaponInventory()
     {
         //totalWeapons = WeaponHolder.transform.childCount;
         //totalWeapons = 4;
         //weapons = GameObject.FindGameObjectsWithTag("Equipped");
-        
+
         for (int i = 0; i < weapons.Length; i++)
         {
             //weapons[i] = WeaponHolder.transform.GetChild(i).gameObject;
             //weapons[i] = GameObject.FindGameObjectsWithTag("Equipped");
-            //weapons[i].SetActive(false);
-            
+           //weapons[i].SetActive(false);
+
         }
         //weapons[0].SetActive(true);
         //currentWeapon = weapons[0];
@@ -39,42 +45,43 @@ public class WeaponSwitching : MonoBehaviour
     }
     void SelectWeapon()
     {
-        if(Input.GetKeyDown(KeyCode.E) | Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.T))
         {
-            if(currentWeaponIndex < weapons.Length -1)
+            if (currentWeaponIndex < weapons.Length - 1)
             {
                 //weapons[currentWeaponIndex].SetActive(false);
-                for(int i=0; i< weapons[currentWeaponIndex].transform.childCount; i++)
+                for (int i = 0; i < weapons[currentWeaponIndex].transform.childCount; i++)
                 {
                     var child = weapons[currentWeaponIndex].transform.GetChild(i).gameObject;
-                    if(child != null)
-                    child.SetActive(false);
+                    if (child != null)
+                        child.SetActive(false);
                 }
                 currentWeaponIndex += 1;
                 //weapons[currentWeaponIndex].SetActive(true);
-                for(int i=0; i< weapons[currentWeaponIndex].transform.childCount; i++)
+                for (int i = 0; i < weapons[currentWeaponIndex].transform.childCount; i++)
                 {
                     var child = weapons[currentWeaponIndex].transform.GetChild(i).gameObject;
-                    if(child != null)
-                    child.SetActive(true);
+                    if (child != null)
+                        child.SetActive(true);
                 }
             }
             else
             {
-                for(int i=0; i< weapons[currentWeaponIndex].transform.childCount; i++)
-                {
+                for (int i = 0; i < weapons[currentWeaponIndex].transform.childCount; i++)
+               {
                     var child = weapons[currentWeaponIndex].transform.GetChild(i).gameObject;
-                    if(child != null)
-                    child.SetActive(false);
+                    if (child != null)
+                        child.SetActive(false);
                 }
                 currentWeaponIndex = 0;
-                for(int i=0; i< weapons[currentWeaponIndex].transform.childCount; i++)
+                for (int i = 0; i < weapons[currentWeaponIndex].transform.childCount; i++)
                 {
                     var child = weapons[currentWeaponIndex].transform.GetChild(i).gameObject;
-                    if(child != null)
-                    child.SetActive(true);
+                    if (child != null)
+                        child.SetActive(true);
                 }
             }
         }
     }
+
 }

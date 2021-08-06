@@ -4,37 +4,40 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     private Vector3 movDir;
-    private float speed = 10;
+    private float speed = 30;
     public GameObject triggerEnemy;
     public float damage;
+    private Rigidbody rb;
     public float lifeSpan;
-    void Start()
+    void Awake()
     {
-
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
-        ApplyMovement();
         BulletLifeSpan();
     }
     //void SetDirection(Vector3 dir)
     //{
     //    movDir = dir;
     //}
-    
+    private void OnEnable()
+    {
+        ApplyMovement();
+        lifeSpan = 0;
+    }
     void ApplyMovement()
     {
-        //transform.Translate(movDir * speed * Time.deltaTime);
-        transform.Translate(Vector3.forward * Time.deltaTime * speed);
+       rb.velocity = transform.forward * speed;
     }
     public void BulletLifeSpan()
     {
-        lifeSpan += 1 * Time.deltaTime;
+        lifeSpan += Time.deltaTime;
         if(lifeSpan >= 5)
         {
-            gameObject.SetActive(false);
             lifeSpan = 0;
+            gameObject.SetActive(false);
         }
     }
     public void OnTriggerEnter(Collider other)
@@ -63,7 +66,10 @@ public class Bullet : MonoBehaviour
         }
         else
         {
-            //gameObject.SetActive(false);
-        }
+            gameObject.SetActive(false);
+        } 
     }
 }
+    
+
+

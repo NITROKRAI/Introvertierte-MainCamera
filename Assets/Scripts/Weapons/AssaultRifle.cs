@@ -2,45 +2,46 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AssaultRifle : MonoBehaviour
+public class AssaultRifle : Weapon
 {
-    // Start is called before the first frame update
     public GameObject bulletSpawnPoint;
     public GameObject Bullet;
-    public float fireRate = 0.75f;
-    public float timeTillNextShot = 0;
-    public GameObject WeaponDropPoint;
-    public GameObject weaponDrop;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    float ammo;
+    float damage;
+    float fireRate;
+    bool infiniteAmmo;
+    float reloadTime;
+    float spread;
+    bool needsToBeCharged;
+    float timeTillNextShot;
     void Update()
     {
-        Shoot();
-    }
-    void FixedUpdate()
-    {
-        
+
     }
 
-    private void Shoot()
+    private void FixedUpdate()
     {
-        if(Input.GetButton("Fire1") && Time.time >= timeTillNextShot)
+        if (Input.GetButton("Fire1") && fireRate >= Data.FireRate)
         {
-            timeTillNextShot = Time.time + fireRate;
-            //Instantiate(Bullet.transform, bulletSpawnPoint.transform.position, bulletSpawnPoint.transform.rotation);
-            //Objectpool variante von instantiate
-            GameObject Bullet = ObjectPool.instance.GetPooledObject();
-            if(Bullet != null) 
-            {
-                Bullet.tag = "Player Bullet";
-                Bullet.transform.position = bulletSpawnPoint.transform.position;
-                Bullet.transform.rotation = bulletSpawnPoint.transform.rotation;
-                Bullet.SetActive(true);
-            }          
+            Shoot();
         }
+        fireRate += Time.fixedDeltaTime;
+    }
+    public override void Shoot()
+    {
+        fireRate = 0;
+
+        GameObject Bullet = ObjectPool.instance.GetPooledObject();
+        if (Bullet != null)
+        {
+            Bullet.tag = "Player Bullet";
+            Bullet.transform.position = bulletSpawnPoint.transform.position;
+            Bullet.transform.rotation = bulletSpawnPoint.transform.rotation;
+            Bullet.SetActive(true);
+        }
+    }
+    public override void Reload()
+    {
+
     }
 }

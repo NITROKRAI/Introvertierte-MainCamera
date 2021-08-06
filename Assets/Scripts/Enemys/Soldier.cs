@@ -4,16 +4,14 @@ using UnityEngine;
 
 public class Soldier : MonoBehaviour
 {
-    public float health = 3;
+   
     public float fireRate = 0.75f;
     public float timeTillNextShot = 0;
     public GameObject bulletSpawnPoint;
-    public Transform target;
-    public float speed;
-    Rigidbody rb;
+  
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+       
     }
 
     
@@ -25,18 +23,8 @@ public class Soldier : MonoBehaviour
             Shoot();
         }
     }
-    void FixedUpdate()
-    {
-        transform.LookAt(target);
-    }
     
-    void OnParticleCollision(GameObject other)
-    {
-         if(other.tag == "Bullet Particle")
-         {
-            health -= 1;
-         }
-    }
+
     public void Shoot()
     {
         timeTillNextShot = Time.time + fireRate;
