@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b302ee3a-7ebb-40f5-b6ff-326466c1b29a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Audio.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../Audio.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Fonts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../Fonts.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Materials.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../Materials.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Models.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../Models.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Models/Handgun_obj.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../Models/Handgun_obj.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Models/Handgun_obj.obj.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../Models/Handgun_obj.obj.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Scenes.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../Scenes.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Scenes/Felicity.unity" beforeDir="false" afterPath="$PROJECT_DIR$/../Scenes/Felicity.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Scenes/Felicity.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../Scenes/Felicity.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Scenes/Maik.unity" beforeDir="false" afterPath="$PROJECT_DIR$/../Scenes/Maik.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Scenes/Maik.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../Scenes/Maik.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Scenes/Moritz.unity" beforeDir="false" afterPath="$PROJECT_DIR$/../Scenes/Moritz.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Scenes/Moritz.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../Scenes/Moritz.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Scriptable Objects.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../Scriptable Objects.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Scriptable Objects/Weapons.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../Scriptable Objects/Weapons.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Scripts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../Scripts.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BulletParticle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BulletParticle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EnemyTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EnemyTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IDamage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/IDamage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InventoryHandler.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryHandler.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Items.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Items.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/New Pistol.asset" beforeDir="false" afterPath="$PROJECT_DIR$/New Pistol.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/New Pistol.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/New Pistol.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pistol.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pistol.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PistolenTemplate.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/PistolenTemplate.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shotgun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Shotgun.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestPlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestPlayerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeaponSwitching.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WeaponSwitching.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Textures.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../Textures.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjectSettings/AudioManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../ProjectSettings/AudioManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjectSettings/ClusterInputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../ProjectSettings/ClusterInputManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjectSettings/DynamicsManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../ProjectSettings/DynamicsManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../ProjectSettings/EditorSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../ProjectSettings/InputManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjectSettings/NavMeshAreas.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../ProjectSettings/NavMeshAreas.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjectSettings/PackageManagerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjectSettings/Physics2DSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../ProjectSettings/Physics2DSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjectSettings/PresetManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../ProjectSettings/PresetManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjectSettings/TimeManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../ProjectSettings/TimeManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjectSettings/UnityConnectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../ProjectSettings/UnityConnectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjectSettings/VFXManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../ProjectSettings/VFXManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjectSettings/VersionControlSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../ProjectSettings/VersionControlSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjectSettings/XRSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../ProjectSettings/XRSettings.asset" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1v4ulJ4wlGc5DSphFY2I08qKiht" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b302ee3a-7ebb-40f5-b6ff-326466c1b29a" name="Default Changelist" comment="" />
+      <created>1625833836598</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1625833836598</updated>
+      <workItem from="1625833851570" duration="39000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>
