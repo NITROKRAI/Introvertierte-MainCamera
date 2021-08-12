@@ -15,16 +15,9 @@ public class DoorUp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();        
-        
-        //Start- und Zielstellung der Tür werden ohne feste Punkte festgelegt
-        /*
-        defaultPosition = transform.localPosition;
-        Debug.Log(transform.localScale);
-        localScale = transform.localScale;
-        endPosition = transform.localPosition + new Vector3(0, localScale.y / 2, 0);
-        */
-       
+        rb = GetComponent<Rigidbody>();
+        GetChildPosition();
+       /*
         //Start- und Zielstellung der Tür werden mit festen Punkten festgelegt
         movingPoints = new Transform[transform.childCount];               
         for (int i = 0; i < transform.childCount; i++)
@@ -34,31 +27,46 @@ public class DoorUp : MonoBehaviour
         defaultPosition = movingPoints[0].position;
         endPosition = movingPoints[1].position;
         Debug.Log("default " + defaultPosition);
+       */
     }
 
     // Update is called once per frame
     void Update()
     {
-        OpenDoor();       
-        CloseDoor();
+        if(isUnlocked)
+        {
+            OpenDoor();
+        }
+        else
+        {
+            CloseDoor();
+        }
+        
+    }
+
+    private void GetChildPosition()
+    {
+        //Start- und Zielstellung der Tür werden mit festen Punkten festgelegt
+        movingPoints = new Transform[transform.childCount];
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            movingPoints[i] = transform.GetChild(i).transform;
+        }
+        defaultPosition = movingPoints[0].position;
+        endPosition = movingPoints[1].position;
+        Debug.Log("default " + defaultPosition);
     }
 
     public void OpenDoor()
-    {
-        if (isUnlocked)
-        {
+    {        
             //rb.velocity = (new Vector3(rb.position.x, speed, rb.position.z));
-            rb.MovePosition(Vector3.Lerp(transform.position,endPosition,speed)); 
-        }
+            rb.MovePosition(Vector3.Lerp(transform.position,endPosition,speed));         
     }
 
     public void CloseDoor()
     {
-        if (!isUnlocked)
-        {
             //rb.velocity = (new Vector3(rb.position.x, -speed, rb.position.z));
             rb.MovePosition(Vector3.Lerp(transform.position, defaultPosition, speed));
-        }
     }
 
     public void Unlock()

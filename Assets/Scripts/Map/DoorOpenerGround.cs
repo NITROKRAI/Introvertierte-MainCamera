@@ -25,7 +25,6 @@ public class DoorOpenerGround: MonoBehaviour
             transform.position = new Vector3(plate.x, plate.y - 0.2f, plate.z);
 
             doorUp.Unlock();
-            //doorUpFind.Unlock();
         }
     }
     
@@ -35,6 +34,5 @@ public class DoorOpenerGround: MonoBehaviour
         transform.position = new Vector3(plate.x, plate.y, plate.z);
 
         doorUp.Lock();
-        //doorUpFind.Lock();
     }
 }

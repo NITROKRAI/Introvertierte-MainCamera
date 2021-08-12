@@ -5,57 +5,31 @@ using UnityEngine;
 public class DoorAutomatic : MonoBehaviour
 {
     [SerializeField] private GameObject lockedDoor;
+    [SerializeField] private List<GameObject> enemys = new List<GameObject>();
     private DoorUp doorUp;
-    private bool inZone = true;
-    //RaycastHit[] hits;
-    //LayerMask playerMask;
-    // Start is called before the first frame update
+
+
     void Start()
     {
         doorUp = lockedDoor.GetComponent<DoorUp>();
-        //playerMask = LayerMask.NameToLayer("Player");
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        EnemyCheck();
     }
 
-    private void OnTriggerStay(Collider col)
+    private void EnemyCheck()
     {
-        if (col.gameObject.tag == ("Enemy"))
+        if(enemys.Count == 0)
         {
-            inZone = true;
-            Debug.LogWarning("Enemy in Zone");
+            doorUp.Unlock();
+        }
+        else
+        {
             doorUp.Lock();
         }
-        else if (!(col.gameObject.tag == ("Enemy")))
-        {
-            inZone = false;
-            Debug.LogError("No Enemy in Zone");
-            doorUp.Unlock();            
-        }        
     }
-
-    public bool InZone()
-    {
-        return inZone;
-    }
-
-
-    /*
-    private void ScanEnemy()
-    {        
-        hits = Physics.RaycastAll(transform.position, transform.forward, Mathf.Infinity,playerMask);
-    }
-
-    private void Output()
-    {
-        foreach (var hit in hits)
-        {
-            Debug.Log(hit);
-        }
-    }
-    */
 }
