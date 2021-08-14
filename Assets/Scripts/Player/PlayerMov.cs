@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PlayerMov : MonoBehaviour
 {
-    public Transform CameraTranst;
-
     public float PlayerSpeed;
     private float xAxis;
     private float zAxis;
@@ -34,7 +32,6 @@ public class PlayerMov : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            //Dash2(xRaw,zRaw);
             if (!isDashing)
             {
                 StartCoroutine(Dashing());
@@ -54,9 +51,9 @@ public class PlayerMov : MonoBehaviour
 
     private void Run(Vector3 dir)
     {
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-        dir = new Vector3(x, 0, z);
+        xAxis = Input.GetAxis("Horizontal");
+        zAxis = Input.GetAxis("Vertical");
+        dir = new Vector3(xAxis, 0, zAxis);
         dir.Normalize();
 
         rb.velocity = (new Vector3(dir.x * PlayerSpeed, 0, dir.z * PlayerSpeed));
