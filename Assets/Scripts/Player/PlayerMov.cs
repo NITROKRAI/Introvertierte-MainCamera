@@ -13,6 +13,7 @@ public class PlayerMov : MonoBehaviour
     public float DashSpeed;
     public float DashTime;
     private bool isDashing;
+    [SerializeField] ParticleSystem DashParticleSystem;
 
     Vector3 dir;
 
