@@ -55,6 +55,7 @@ public class DoorUp : MonoBehaviour
         defaultPosition = movingPoints[0].position;
         endPosition = movingPoints[1].position;
         Debug.Log("default " + defaultPosition);
+        Debug.Log("Open " + endPosition);
     }
 
     public void OpenDoor()
