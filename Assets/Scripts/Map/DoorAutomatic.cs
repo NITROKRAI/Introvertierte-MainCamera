@@ -18,6 +18,7 @@ public class DoorAutomatic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ListClearer();
         EnemyCheck();
     }
 
@@ -30,6 +31,17 @@ public class DoorAutomatic : MonoBehaviour
         else
         {
             doorUp.Lock();
+        }
+    }
+
+    private void ListClearer()
+    {
+        for (int i = 0; i < enemys.Count; i++)
+        {
+            if(enemys[i] == null)
+            {
+                enemys.RemoveAt(i);
+            }
         }
     }
 }
