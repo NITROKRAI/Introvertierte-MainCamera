@@ -49359,6 +49359,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 3326715498361760875, guid: 858d5df52f82cd242af5304dddc8fab1, type: 3}
+      propertyPath: m_Constraints
+      value: 122
+      objectReference: {fileID: 0}
     - target: {fileID: 3326715498361760878, guid: 858d5df52f82cd242af5304dddc8fab1, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -96152,7 +96156,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 633572040, guid: fc9eef5f87afdc549a28813b28558371, type: 3}
       propertyPath: enemys.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 633572040, guid: fc9eef5f87afdc549a28813b28558371, type: 3}
       propertyPath: enemys.Array.data[0]
@@ -96160,6 +96164,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 633572040, guid: fc9eef5f87afdc549a28813b28558371, type: 3}
       propertyPath: enemys.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 633572040, guid: fc9eef5f87afdc549a28813b28558371, type: 3}
+      propertyPath: enemys.Array.data[2]
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3430947781036613929, guid: fc9eef5f87afdc549a28813b28558371, type: 3}
