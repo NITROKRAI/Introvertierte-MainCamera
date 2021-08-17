@@ -88,16 +88,16 @@ public class Bullet : MonoBehaviour
                 triggerEnemy.GetComponent<Enemy>().health -= damage;
                 gameObject.SetActive(false);
             }
-            else if (other.tag == "Wall")
+            else if (other.tag == "World")
             {
-
+                gameObject.SetActive(false);
             }
         }
         if (gameObject.tag == "Enemy Bullet")
         {
-            if (other.tag == "Wall")
+            if (other.tag == "World")
             {
-
+                gameObject.SetActive(false);
             }
         }
     }
