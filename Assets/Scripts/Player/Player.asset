@@ -9,15 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21f049f293dc25444915a210c4a7965a, type: 3}
-  m_Name: Pistol
+  m_Script: {fileID: 11500000, guid: 4e8ece3b91f487f41bbece37ee134e98, type: 3}
+  m_Name: Player
   m_EditorClassIdentifier: 
-  FireRate: 0.75
-  Damage: 0
-  Ammo: 6
-  ReloadTime: 1
-  Spread: 0
-  NeedsToBeCharged: 0
-  InfiniteAmmo: 0
-  ammoCasingAfterEachShot: 0
-  ejectMagazineOnReload: 0
+  Health: 6
+  MovementSpeed: 0
+  InvincibilityTimer: 0.75
+  IsInvincible: 1
+  DealsContactDamage: 0
+  ContactDamage: 0

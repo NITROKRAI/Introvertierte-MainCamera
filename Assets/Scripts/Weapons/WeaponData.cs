@@ -13,4 +13,6 @@ public class WeaponData : ScriptableObject
     public float Spread;
     public bool NeedsToBeCharged;
     public bool InfiniteAmmo;
+    public bool ammoCasingAfterEachShot;
+    public bool ejectMagazineOnReload;
 }

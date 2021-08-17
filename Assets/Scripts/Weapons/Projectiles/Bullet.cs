@@ -9,6 +9,8 @@ public class Bullet : MonoBehaviour
     public float damage;
     private Rigidbody rb;
     public float lifeSpan;
+    public float test;
+    public GameObject ParticlePrefab;
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -29,47 +31,77 @@ public class Bullet : MonoBehaviour
     }
     void ApplyMovement()
     {
-       rb.velocity = transform.forward * speed;
+        rb.velocity = transform.forward * speed;
     }
     public void BulletLifeSpan()
     {
         lifeSpan += Time.deltaTime;
-        if(lifeSpan >= 5)
+        if (lifeSpan >= 5)
         {
             lifeSpan = 0;
             gameObject.SetActive(false);
         }
     }
+    //public void OnColliderEnter(Collider other)
+    //{
+    //Instantiate(ParticlePrefab, this.transform.position, Quaternion.identity);
+    //if(gameObject.tag == "Wall")
+    //{
+    //    Instantiate(ParticlePrefab, this.transform.position, Quaternion.identity);
+    //}
+    //if(gameObject.tag == "Player Bullet" && other.tag == "Player")
+    //{
+
+    //}
+    //if(gameObject.tag == "Enemy Bullet" && other.tag == "Enemy")
+    //{
+
+    //}
+    //else if(gameObject.tag == "Enemy Bullet" && other.tag =="Player")
+    //{
+    //    gameObject.SetActive(false);
+    //}
+    //else if(other.tag == "Enemy")
+    //{   
+    //    triggerEnemy = other.gameObject;
+    //    triggerEnemy.GetComponent<Enemy>().health -= damage;
+    //    gameObject.SetActive(false);
+    //}
+    //if(gameObject.tag == "Player Bullet" | other.tag == "Enemy Bullet")
+    //{
+
+    //}
+    //else
+    //{
+    //    gameObject.SetActive(false);
+    //} 
+    //}
+
     public void OnTriggerEnter(Collider other)
     {
-        if(gameObject.tag == "Player Bullet" && other.tag == "Player")
+        if (gameObject.tag == "Player Bullet")
         {
-            
+            if (other.tag == "Enemy")
+            {
+
+                triggerEnemy = other.gameObject;
+                triggerEnemy.GetComponent<Enemy>().health -= damage;
+                gameObject.SetActive(false);
+            }
+            else if (other.tag == "World")
+            {
+                gameObject.SetActive(false);
+            }
         }
-        if(gameObject.tag == "Enemy Bullet" && other.tag == "Enemy")
+        if (gameObject.tag == "Enemy Bullet")
         {
-            
+            if (other.tag == "World")
+            {
+                gameObject.SetActive(false);
+            }
         }
-        else if(gameObject.tag == "Enemy Bullet" && other.tag =="Player")
-        {
-            gameObject.SetActive(false);
-        }
-        else if(other.tag == "Enemy")
-        {   
-            triggerEnemy = other.gameObject;
-            triggerEnemy.GetComponent<Enemy>().health -= damage;
-            gameObject.SetActive(false);
-        }
-        if(gameObject.tag == "Player Bullet" | other.tag == "Enemy Bullet")
-        {
-            
-        }
-        else
-        {
-            gameObject.SetActive(false);
-        } 
     }
 }
-    
+
 
 

@@ -4,46 +4,50 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public float Health;
-    float invincibility;
-    bool isInvincible;
+    public MobData Data;
+    public float CurrentHealth;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        Data.IsInvincible = false;
+        CurrentHealth = Data.Health;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (invincibility > 0)
+        if (CurrentHealth == 0)
         {
-            invincibility -= Time.deltaTime;
-            isInvincible = true;
+            Object.Destroy(this.gameObject);
         }
     }
 
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.gameObject.CompareTag("EnemyBullet"))
-    //    {
-    //        Health = Health - 5;
-    //    }
-    //
-    //}
-    //
-    //void OnCollisionStay(Collision collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Enemy") && invincibility <= 0)
-    //    {
-    //        TakeDamage(1);
-    //        invincibility = 1f;
-    //    }
-    //}
-
-    void TakeDamage(float damage)
+    private void OnCollisionEnter(Collision collision)
     {
-        Health = Health - damage;
+        if (collision.gameObject.CompareTag("Enemy Bullet") && Data.IsInvincible == false)
+        {
+            CurrentHealth -= 1;
+            Invincibility();
+        }
+    
+    }
+    
+    void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy") && Data.IsInvincible == false)
+        {
+            CurrentHealth -= 1;
+            Invincibility();
+        }
+    }
+    void Invincibility()
+    {
+        Data.IsInvincible = true;
+        Invoke("ResetInvincibility", Data.InvincibilityTimer);
+    }
+    void ResetInvincibility()
+    {
+        Data.IsInvincible = false;
     }
 }
