@@ -28,8 +28,6 @@ public class PlayerMov : MonoBehaviour
 
     void Update()
     {
-        Run(dir);
-
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             if (!isDashing)
