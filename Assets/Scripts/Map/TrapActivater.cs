@@ -7,7 +7,7 @@ public class TrapActivater : MonoBehaviour
     Transform parent;
     private bool isActivated = false;
     private Vector3 defaultPosition;
-    private Vector3 activPosition;
+    private Vector3 activPosition;    
 
     [SerializeField] private float activationDuration;
 
@@ -16,7 +16,7 @@ public class TrapActivater : MonoBehaviour
     {
         parent = transform.parent;
         defaultPosition = new Vector3(parent.position.x, parent.position.y, parent.position.z);
-        activPosition = new Vector3(parent.position.x, parent.position.y + (-parent.position.y), parent.position.z);
+        activPosition = new Vector3(parent.position.x, parent.position.y + 0.5f, parent.position.z);
     }
 
     // Update is called once per frame
@@ -34,8 +34,7 @@ public class TrapActivater : MonoBehaviour
                 return;
             }
             Debug.Log("Player in Trap");
-            StartCoroutine(GetTemporarilyActivated());
-            //parent.position = new Vector3(parent.position.x,parent.position.y + (-parent.position.y),parent.position.z);
+            StartCoroutine(GetTemporarilyActivated());            
         }
     }
 

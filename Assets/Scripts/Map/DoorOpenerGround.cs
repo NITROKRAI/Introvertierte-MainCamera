@@ -17,7 +17,7 @@ public class DoorOpenerGround: MonoBehaviour
         doorUp = lockedDoor.GetComponent<DoorUp>();
         plate = transform.position;
     }
-    private void OnTriggerEnter(Collider col)
+    private void OnTriggerStay(Collider col)
     {
         if ((col.gameObject.tag == "Player") || (col.gameObject.tag =="Box"))
         {

@@ -11,6 +11,7 @@ TagManager:
   - Player Bullet
   - Enemy Bullet
   - World
+  - Trap
   layers:
   - Default
   - TransparentFX

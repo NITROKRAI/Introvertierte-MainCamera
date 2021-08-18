@@ -1,17 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameUI : MonoBehaviour
 {
     private bool isPaused = false;
 
     [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private PlayerStats playerStats;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerStats = FindObjectOfType<PlayerStats>();
     }
 
     // Update is called once per frame
@@ -28,6 +30,8 @@ public class GameUI : MonoBehaviour
                 Pause();
             }
         }
+
+        OpenDeath();
     }
     
     public void Continue()
@@ -40,5 +44,13 @@ public class GameUI : MonoBehaviour
     {
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
+    }
+
+    public void OpenDeath()
+    {
+        if(playerStats.CurrentHealth == 0)
+        {
+            SceneManager.LoadScene("DeathScene");
+        }
     }
 }
