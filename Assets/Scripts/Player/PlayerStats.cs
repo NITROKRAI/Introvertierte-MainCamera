@@ -23,11 +23,6 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-    
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Enemy Bullet") && Data.IsInvincible == false)
