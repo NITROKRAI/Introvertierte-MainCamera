@@ -44,7 +44,7 @@ public class ShootingOnlyEnemy : MonoBehaviour
 
         if (Bullet != null)
         {
-            Bullet.tag = "Player Bullet";
+            Bullet.tag = "Enemy Bullet";
             Bullet.transform.position = bulletSpawnPoint.transform.position;
             Bullet.transform.rotation = bulletSpawnPoint.transform.rotation;
             Bullet.SetActive(true);

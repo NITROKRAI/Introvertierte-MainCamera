@@ -25,14 +25,19 @@ public class PlayerStats : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Enemy Bullet") && Data.IsInvincible == false)
+    
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Enemy Bullet") && Data.IsInvincible == false)
         {
             CurrentHealth -= 1;
             Invincibility();
         }
-    
+        
     }
-    
+
     void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.CompareTag("Enemy") && Data.IsInvincible == false)
