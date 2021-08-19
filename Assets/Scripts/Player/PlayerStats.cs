@@ -30,7 +30,13 @@ public class PlayerStats : MonoBehaviour
             CurrentHealth -= 1;
             Invincibility();
         }
-        
+
+        if (other.gameObject.CompareTag("Trap") && Data.IsInvincible == false)
+        {
+            CurrentHealth -= 1;
+            Invincibility();
+        }
+
     }
 
     void OnCollisionStay(Collision collision)
@@ -39,8 +45,9 @@ public class PlayerStats : MonoBehaviour
         {
             CurrentHealth -= 1;
             Invincibility();
-        }
+        }        
     }
+
     void Invincibility()
     {
         Data.IsInvincible = true;
