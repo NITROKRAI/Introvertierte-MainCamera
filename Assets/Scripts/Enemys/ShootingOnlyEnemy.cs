@@ -30,8 +30,6 @@ public class ShootingOnlyEnemy : MonoBehaviour
 
     public void Attack()
     {
-        //Vector3 spawnPos;
-
         transform.LookAt(player);
         GameObject Bullet = ObjectPool.instance.GetPooledObject();
 
