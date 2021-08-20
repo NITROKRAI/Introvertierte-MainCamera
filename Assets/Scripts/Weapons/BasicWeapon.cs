@@ -27,8 +27,10 @@ public class BasicWeapon : Weapon
     public Rigidbody BulletRB;
     public GameObject[] bulletSpawnPoints = new GameObject[0];
     public ParticleSystem muzleFlash;
+    public ParticleSystem BulletCasing;
     public float DamageReference;
     public float BulletDamage;
+    public GameObject BulletCasingPosition;
     // Start is called before the first frame update
     void Start()
     {
@@ -82,6 +84,7 @@ public class BasicWeapon : Weapon
     public override void Shoot()
     {
         muzleFlash.Play();
+        BulletCasing.Play();
         canShoot = false;
         ammo--;
         if (allowInvoke)
@@ -95,10 +98,9 @@ public class BasicWeapon : Weapon
         {
             if (Bullet != null)
             {
-                
+            Instantiate(BulletCasing, BulletCasingPosition.transform.position, BulletCasingPosition.transform.rotation);   
             Debug.Log("dick");
             GameObject Bullet = ObjectPool.instance.GetPooledObject();
-            randomSpreadY += Random.Range(maxSpread, maxSpread);
             Bullet.tag = "Player Bullet";
             DamageReference = Bullet.GetComponent<Bullet>().damage;
             Bullet.transform.position = bulletSpawnPoints[d].transform.position;

@@ -131,6 +131,10 @@ MonoBehaviour:
   lifeSpan: 5
   test: 0
   ParticlePrefab: {fileID: 4974689101474154780, guid: 05f8bc097725ea5488828f3e6b39725e, type: 3}
+  LayerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  BulletHole: {fileID: 2935523523356566844, guid: 0fc93db6eb19fc443a806df41d037145, type: 3}
 --- !u!96 &6179022659092356104
 TrailRenderer:
   serializedVersion: 2
@@ -151,7 +155,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3d3f7da3ad1b2854db6e8bdbfe7b5eef, type: 2}
+  - {fileID: 2100000, guid: 1d8970531d5a27f459086a328700554a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
