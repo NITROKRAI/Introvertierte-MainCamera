@@ -35,7 +35,6 @@ public class ShootingOnlyEnemy : MonoBehaviour
     public void Attack()
     {
         transform.LookAt(player);
-        //GameObject Bullet = ObjectPool.instance.GetPooledObject();
 
         if (isInvincible)
         {
@@ -50,11 +49,8 @@ public class ShootingOnlyEnemy : MonoBehaviour
            
             if (Bullet != null)
             {
-                //Debug.Log("dick");
                 GameObject Bullet = ObjectPool.instance.GetPooledObject();
-                //randomSpreadY += Random.Range(maxSpread, maxSpread);
                 Bullet.tag = "Enemy Bullet";
-                //DamageReference = Bullet.GetComponent<Bullet>().damage;
                 Bullet.transform.position = bulletSpawnPoints[i].transform.position;
                 Bullet.transform.rotation = bulletSpawnPoints[i].transform.rotation;
                 Bullet.SetActive(true);
