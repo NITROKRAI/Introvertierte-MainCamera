@@ -7,7 +7,11 @@ public class ShootingOnlyEnemy : MonoBehaviour
     public GameObject Bullet;
     public float ShootPower;
     public GameObject bulletSpawnPoint;
-    private Transform player; 
+    private Transform player;
+    public GameObject[] bulletSpawnPoints = new GameObject[0];
+    float randomSpreadY;
+    float minSpread = 0.1f;
+    float maxSpread = 0.3f;
 
     public Transform PlayerCheckPos;
     public float PlayerCheckRadios;
@@ -31,7 +35,7 @@ public class ShootingOnlyEnemy : MonoBehaviour
     public void Attack()
     {
         transform.LookAt(player);
-        GameObject Bullet = ObjectPool.instance.GetPooledObject();
+        //GameObject Bullet = ObjectPool.instance.GetPooledObject();
 
         if (isInvincible)
         {
@@ -40,13 +44,31 @@ public class ShootingOnlyEnemy : MonoBehaviour
 
         isInvincible = true;
 
-        if (Bullet != null)
+        
+        for (int i = 0; i < bulletSpawnPoints.Length; i++)
         {
-            Bullet.tag = "Enemy Bullet";
-            Bullet.transform.position = bulletSpawnPoint.transform.position;
-            Bullet.transform.rotation = bulletSpawnPoint.transform.rotation;
-            Bullet.SetActive(true);
+           
+            if (Bullet != null)
+            {
+                //Debug.Log("dick");
+                GameObject Bullet = ObjectPool.instance.GetPooledObject();
+                //randomSpreadY += Random.Range(maxSpread, maxSpread);
+                Bullet.tag = "Enemy Bullet";
+                //DamageReference = Bullet.GetComponent<Bullet>().damage;
+                Bullet.transform.position = bulletSpawnPoints[i].transform.position;
+                Bullet.transform.rotation = bulletSpawnPoints[i].transform.rotation;
+                Bullet.SetActive(true);
+
+            }
         }
+
+        //if (Bullet != null)
+        //{
+        //    Bullet.tag = "Enemy Bullet";
+        //    Bullet.transform.position = bulletSpawnPoint.transform.position;
+        //    Bullet.transform.rotation = bulletSpawnPoint.transform.rotation;
+        //    Bullet.SetActive(true);
+        //}
 
         StartCoroutine(Invinciblity());
 

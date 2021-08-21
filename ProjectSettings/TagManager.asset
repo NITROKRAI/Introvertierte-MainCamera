@@ -12,6 +12,7 @@ TagManager:
   - Enemy Bullet
   - World
   - Trap
+  - Heart
   layers:
   - Default
   - TransparentFX
