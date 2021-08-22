@@ -9,9 +9,7 @@ public class ShootingOnlyEnemy : MonoBehaviour
     public GameObject bulletSpawnPoint;
     private Transform player;
     public GameObject[] bulletSpawnPoints = new GameObject[0];
-    float randomSpreadY;
-    float minSpread = 0.1f;
-    float maxSpread = 0.3f;
+    private int shotTimes;
 
     public Transform PlayerCheckPos;
     public float PlayerCheckRadios;
@@ -43,31 +41,39 @@ public class ShootingOnlyEnemy : MonoBehaviour
 
         isInvincible = true;
 
-        
-        for (int i = 0; i < bulletSpawnPoints.Length; i++)
+        if (shotTimes <= 4)
         {
-           
             if (Bullet != null)
             {
                 GameObject Bullet = ObjectPool.instance.GetPooledObject();
                 Bullet.tag = "Enemy Bullet";
-                Bullet.transform.position = bulletSpawnPoints[i].transform.position;
-                Bullet.transform.rotation = bulletSpawnPoints[i].transform.rotation;
+                Bullet.transform.position = bulletSpawnPoint.transform.position;
+                Bullet.transform.rotation = bulletSpawnPoint.transform.rotation;
                 Bullet.SetActive(true);
 
+                shotTimes += 1;
             }
         }
 
-        //if (Bullet != null)
-        //{
-        //    Bullet.tag = "Enemy Bullet";
-        //    Bullet.transform.position = bulletSpawnPoint.transform.position;
-        //    Bullet.transform.rotation = bulletSpawnPoint.transform.rotation;
-        //    Bullet.SetActive(true);
-        //}
+        if (shotTimes == 5)
+        {
+            for (int b = 0; b < bulletSpawnPoints.Length; b++)
+            {
+
+                if (Bullet != null)
+                {
+                    GameObject Bullet = ObjectPool.instance.GetPooledObject();
+                    Bullet.tag = "Enemy Bullet";
+                    Bullet.transform.position = bulletSpawnPoints[b].transform.position;
+                    Bullet.transform.rotation = bulletSpawnPoints[b].transform.rotation;
+                    Bullet.SetActive(true);
+
+                    shotTimes = 0;
+                }
+            }
+        }
 
         StartCoroutine(Invinciblity());
-
     }
 
     private void OnDrawGizmos()
@@ -78,7 +84,7 @@ public class ShootingOnlyEnemy : MonoBehaviour
 
     IEnumerator Invinciblity()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
         isInvincible = false;
     }
 }
