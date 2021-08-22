@@ -11,6 +11,13 @@ public class Bullet : MonoBehaviour
     public float lifeSpan;
     public float test;
     public GameObject ParticlePrefab;
+    Vector3 prevPos;
+    public LayerMask LayerMask;
+    public ParticleSystem BulletHole;
+    void Start()
+    {
+        prevPos = transform.position;
+    }
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -18,6 +25,15 @@ public class Bullet : MonoBehaviour
 
     void Update()
     {
+        
+        //if (Physics.Raycast(prevPos, (transform.position - prevPos).normalized,(transform.position - prevPos).magnitude));
+        //{
+            
+        //}
+        //Ray ray;
+        //prevPos = transform.position;
+        //RaycastHit hit;
+        //ray = Physics.Raycast(new Ray(prevPos, (transform.position - prevPos).normalized), (transform.position - prevPos).magnitude);
         BulletLifeSpan();
     }
     //void SetDirection(Vector3 dir)
@@ -41,6 +57,29 @@ public class Bullet : MonoBehaviour
             lifeSpan = 0;
             gameObject.SetActive(false);
         }
+    }
+    public void OnTriggerEnter(Collider other)
+    {
+        RaycastHit hitI;
+        if (Physics.Raycast(transform.position, transform.forward, out hitI, LayerMask))
+        {
+            if (hitI.collider.CompareTag("World"))
+            {
+                Instantiate(BulletHole, hitI.point, Quaternion.LookRotation(hitI.normal));
+                Debug.Log("raycasthit");
+            }
+
+        }
+        if (gameObject.tag == "Player Bullet")
+        {
+            if (other.tag == "Enemy")
+            {
+                triggerEnemy = other.gameObject;
+                triggerEnemy.GetComponent<Enemy>().health -= damage;
+                gameObject.SetActive(false);
+            }
+        }
+ 
     }
     //public void OnColliderEnter(Collider other)
     //{
@@ -76,32 +115,8 @@ public class Bullet : MonoBehaviour
     //    gameObject.SetActive(false);
     //} 
     //}
-
-    public void OnTriggerEnter(Collider other)
-    {
-        if (gameObject.tag == "Player Bullet")
-        {
-            if (other.tag == "Enemy")
-            {
-
-                triggerEnemy = other.gameObject;
-                triggerEnemy.GetComponent<Enemy>().health -= damage;
-                gameObject.SetActive(false);
-            }
-            else if (other.tag == "World")
-            {
-                gameObject.SetActive(false);
-            }
-        }
-        if (gameObject.tag == "Enemy Bullet")
-        {
-            if (other.tag == "World")
-            {
-                gameObject.SetActive(false);
-            }
-        }
-    }
 }
+
 
 
 

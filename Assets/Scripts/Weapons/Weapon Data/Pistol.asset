@@ -15,7 +15,7 @@ MonoBehaviour:
   FireRate: 0.75
   Damage: 0
   Ammo: 6
-  ReloadTime: 1
+  ReloadTime: 0.75
   Spread: 0
   NeedsToBeCharged: 0
   InfiniteAmmo: 0
