@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    private MobData playerData;
+    [SerializeField]private MobData playerData;
     private PlayerStats playerStats;
     public Slider slider;
 
     private void Start()
     {
-        playerData = FindObjectOfType<MobData>();
+        //playerData = FindObjectOfType<MobData>();
         playerStats = FindObjectOfType<PlayerStats>();
         SetMaxHealth(playerData.Health);
     }
