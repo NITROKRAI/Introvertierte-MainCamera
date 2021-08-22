@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4204120318082304510}
   - component: {fileID: 4204120318082304505}
   - component: {fileID: 4204120318082304504}
-  - component: {fileID: 4204120318082304507}
+  - component: {fileID: -618342358629519439}
   m_Layer: 0
   m_Name: Heart
   m_TagString: Heart
@@ -96,7 +96,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4204120318082304507
+--- !u!114 &-618342358629519439
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,4 +108,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfcd987752eb4244f89a9d177c025912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 7237569407289590194, guid: 006b9b8d2bd0ce94b9a5e4a5efd16b02, type: 3}

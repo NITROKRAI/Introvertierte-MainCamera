@@ -25,10 +25,11 @@ public class PlayerStats : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //if (other.gameObject.CompareTag("Heart"))
-        //{
-        //    GetHeart();
-        //}
+        if (other.gameObject.CompareTag("Heart"))
+        {
+            GetHeart();
+            Debug.Log("PlayerHeart");
+        }
 
         if (other.gameObject.CompareTag("Enemy Bullet") && Data.IsInvincible == false)
         {
@@ -54,7 +55,13 @@ public class PlayerStats : MonoBehaviour
 
     public void GetHeart()
     {
-        CurrentHealth += 1;
+        Debug.Log("GetHeart");
+        if (CurrentHealth < 6)
+        {
+            CurrentHealth += 1;
+            Debug.Log("LifeUp");
+        }
+        
     }
 
     void Invincibility()
