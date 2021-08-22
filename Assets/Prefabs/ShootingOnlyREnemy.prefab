@@ -216,7 +216,7 @@ MonoBehaviour:
   - {fileID: 1785033286092700043}
   - {fileID: 5968637401776724679}
   PlayerCheckPos: {fileID: 4700605978993650796}
-  PlayerCheckRadios: 3
+  PlayerCheckRadios: 12
 --- !u!114 &4087044745089796988
 MonoBehaviour:
   m_ObjectHideFlags: 0

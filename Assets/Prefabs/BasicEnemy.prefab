@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
-  HealthDropChance: 0.3
+  HealthDropChance: 0.05
   Heart: {fileID: 4204120318082304506, guid: f99c92a1d0d2eed409bd4dcb43fc96a7, type: 3}
 --- !u!114 &8833620235673492229
 MonoBehaviour:
