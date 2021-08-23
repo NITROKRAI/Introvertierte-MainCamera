@@ -166,7 +166,7 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 8
-  sightRange: 14
+  sightRange: 18
   attackRange: 8
 --- !u!195 &1953058221413254117
 NavMeshAgent:
