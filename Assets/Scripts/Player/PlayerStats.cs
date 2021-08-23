@@ -7,6 +7,8 @@ public class PlayerStats : MonoBehaviour
     public MobData Data;
     public float CurrentHealth;
 
+    private bool alreadyGetHeart;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,11 +57,17 @@ public class PlayerStats : MonoBehaviour
 
     public void GetHeart()
     {
-        Debug.Log("GetHeart");
+        if (alreadyGetHeart)
+        {
+            return;
+        }
+
         if (CurrentHealth < 6)
         {
+            alreadyGetHeart = true;
             CurrentHealth += 1;
             Debug.Log("LifeUp");
+            StartCoroutine(AlreadyGetHeart());
         }
         
     }
@@ -72,5 +80,11 @@ public class PlayerStats : MonoBehaviour
     void ResetInvincibility()
     {
         Data.IsInvincible = false;
+    }
+
+    IEnumerator AlreadyGetHeart()
+    {
+        yield return new WaitForSeconds(0.5f);
+        alreadyGetHeart = false;
     }
 }
