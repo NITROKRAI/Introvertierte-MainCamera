@@ -38612,7 +38612,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f75635f6cc0c6044994fe704bb8a636d, type: 2}
+  - {fileID: 2100000, guid: 648e77ddd6982aa47b758217bc3434f1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -43300,6 +43300,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3430947781036613931, guid: fc9eef5f87afdc549a28813b28558371, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2c9ef4dcd168840458531d95de633a90, type: 2}
     - target: {fileID: 3430947781036613973, guid: fc9eef5f87afdc549a28813b28558371, type: 3}
       propertyPath: m_Name
       value: DoorAutomatic
@@ -53788,6 +53792,10 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 122
       objectReference: {fileID: 0}
+    - target: {fileID: 3326715498361760876, guid: 858d5df52f82cd242af5304dddc8fab1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2c9ef4dcd168840458531d95de633a90, type: 2}
     - target: {fileID: 3326715498361760878, guid: 858d5df52f82cd242af5304dddc8fab1, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -76260,6 +76268,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3430947781036613931, guid: fc9eef5f87afdc549a28813b28558371, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2c9ef4dcd168840458531d95de633a90, type: 2}
     - target: {fileID: 3430947781036613973, guid: fc9eef5f87afdc549a28813b28558371, type: 3}
       propertyPath: m_Name
       value: DoorAutomatic
@@ -79296,6 +79308,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3430947781036613931, guid: fc9eef5f87afdc549a28813b28558371, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2c9ef4dcd168840458531d95de633a90, type: 2}
     - target: {fileID: 3430947781036613973, guid: fc9eef5f87afdc549a28813b28558371, type: 3}
       propertyPath: m_Name
       value: DoorAutomatic
@@ -79465,6 +79481,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3430947781036613931, guid: fc9eef5f87afdc549a28813b28558371, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2c9ef4dcd168840458531d95de633a90, type: 2}
     - target: {fileID: 3430947781036613973, guid: fc9eef5f87afdc549a28813b28558371, type: 3}
       propertyPath: m_Name
       value: DoorAutomatic
@@ -81394,6 +81414,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3430947781036613931, guid: fc9eef5f87afdc549a28813b28558371, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2c9ef4dcd168840458531d95de633a90, type: 2}
     - target: {fileID: 3430947781036613973, guid: fc9eef5f87afdc549a28813b28558371, type: 3}
       propertyPath: m_Name
       value: DoorAutomatic
@@ -107754,6 +107778,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3430947781036613931, guid: fc9eef5f87afdc549a28813b28558371, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2c9ef4dcd168840458531d95de633a90, type: 2}
     - target: {fileID: 3430947781036613935, guid: fc9eef5f87afdc549a28813b28558371, type: 3}
       propertyPath: movingPoints.Array.size
       value: 0
