@@ -38,5 +38,10 @@ public class OptionMenu : MonoBehaviour
         masterMixer.SetFloat("SFXVol", Mathf.Log10(sliderValue) * 20);
         PlayerPrefs.SetFloat("SFXVol", sliderValue);
     }
+
+    public void FullscreenToggle()
+    {
+        Screen.fullScreen = !Screen.fullScreen;
+    }
 }
 
