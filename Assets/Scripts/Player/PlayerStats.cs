@@ -8,7 +8,7 @@ public class PlayerStats : MonoBehaviour
     public float CurrentHealth;
     [SerializeField] AudioSource HurtSound;
     private bool alreadyGetHeart;
-
+    public float elapsedTime;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +19,7 @@ public class PlayerStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (CurrentHealth == 0)
         {
             Object.Destroy(this.gameObject);
@@ -71,15 +72,12 @@ public class PlayerStats : MonoBehaviour
 
     void Invincibility()
     {
+        //StartCoroutine(Flash());
+
+        elapsedTime = 0;
         Data.IsInvincible = true;
         Invoke("ResetInvincibility", Data.InvincibilityTimer);
-        
-        
-            Renderer[] RendererArray = GetComponentsInChildren<Renderer>();
-            foreach (Renderer r in RendererArray)
-            r.enabled = false;
-        
-    }
+    } 
     void ResetInvincibility()
     {
         Data.IsInvincible = false;
@@ -96,4 +94,19 @@ public class PlayerStats : MonoBehaviour
         CurrentHealth -= 1;
         HurtSound.Play();
     }
+    //IEnumerator Flash()
+    //{
+    //    while (elapsedTime < 10)
+    //    {
+
+    //    elapsedTime += Time.deltaTime;
+    //    Renderer[] RendererArray = GetComponentsInChildren<Renderer>();
+    //    foreach (Renderer r in RendererArray)
+    //    r.enabled = false;
+    //    yield return new WaitForSeconds(1f);
+    //    foreach (Renderer r in RendererArray)
+    //    r.enabled = true;
+            
+    //    }
+    //}
 }
