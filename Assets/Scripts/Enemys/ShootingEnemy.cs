@@ -79,11 +79,11 @@ public class ShootingEnemy : MonoBehaviour
 
         if (Bullet != null)
         {
-            PukeEffect.Play();
             Bullet.tag = "Enemy Bullet";
             Bullet.transform.position = bulletSpawnPoint.transform.position;
             Bullet.transform.rotation = bulletSpawnPoint.transform.rotation;
             Bullet.SetActive(true);
+            PukeEffect.Play();
         }
 
         StartCoroutine(Invinciblity());
