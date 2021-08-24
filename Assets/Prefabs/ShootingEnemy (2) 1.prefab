@@ -4933,7 +4933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c212bee1e43c89241bc56e090d565456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
+  health: 3
   HealthDropChance: 0.1
   Heart: {fileID: 4204120318082304506, guid: f99c92a1d0d2eed409bd4dcb43fc96a7, type: 3}
 --- !u!114 &8419997621782009817
