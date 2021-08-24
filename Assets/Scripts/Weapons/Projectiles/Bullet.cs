@@ -77,19 +77,22 @@ public class Bullet : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         otherTag = other.gameObject.tag;
-        switch(otherTag)
+        if (gameObject.tag == "Player Bullet")
         {
-            case "Enemy":
-                triggerEnemy = other.gameObject;
-                triggerEnemy.GetComponent<Enemy>().health -= damage;
-                gameObject.SetActive(false);
-                break;
-            case "World":
-                gameObject.SetActive(false);
-                break;
-            default:
+            switch (otherTag)
+            {
+                case "Enemy":
+                    triggerEnemy = other.gameObject;
+                    triggerEnemy.GetComponent<Enemy>().health -= damage;
+                    gameObject.SetActive(false);
+                    break;
+                case "World":
+                    gameObject.SetActive(false);
+                    break;
+                default:
 
-                break;
+                    break;
+            }
         }
         //RaycastHit hitI;
         //if (Physics.Raycast(RaycastPos.transform.position, transform.forward, out hitI, LayerMask))
