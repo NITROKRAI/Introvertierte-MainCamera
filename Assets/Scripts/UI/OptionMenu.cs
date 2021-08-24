@@ -14,7 +14,9 @@ public class OptionMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        volumeSliders[0].value = PlayerPrefs.GetFloat("MasterVol"); 
+        volumeSliders[1].value = PlayerPrefs.GetFloat("MusicVol"); 
+        volumeSliders[2].value = PlayerPrefs.GetFloat("SFXVol");
     }
 
     public void BackToMain()
