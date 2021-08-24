@@ -109775,6 +109775,7 @@ GameObject:
   - component: {fileID: 772371157155706820}
   - component: {fileID: 772371157155706823}
   - component: {fileID: 772371157155706822}
+  - component: {fileID: 772371157155706824}
   m_Layer: 3
   m_Name: Shotgun
   m_TagString: Untagged
@@ -109912,7 +109913,7 @@ MonoBehaviour:
   DamageReference: 0
   BulletDamage: 0
   BulletCasingPosition: {fileID: 772371156620055418}
-  ShootSound: {fileID: 772371157155706822}
+  ShootSound: {fileID: 8300000, guid: 76399cdc115657544858d64e4229c86c, type: 3}
   ReloadSound: {fileID: 772371157155706824}
 --- !u!82 &772371157155706824
 AudioSource:
@@ -110394,6 +110395,7 @@ GameObject:
   - component: {fileID: 1801335507767494656}
   - component: {fileID: 1801335507767494658}
   - component: {fileID: 1801335507767494659}
+  - component: {fileID: 1801335507767494660}
   m_Layer: 3
   m_Name: Pistol 1
   m_TagString: Untagged
@@ -110920,6 +110922,7 @@ GameObject:
   - component: {fileID: 4649279642466171547}
   - component: {fileID: 4649279642466171544}
   - component: {fileID: 4649279642466171549}
+  - component: {fileID: 4649279642466171548}
   m_Layer: 3
   m_Name: Assault Rifle 1
   m_TagString: Untagged
