@@ -23,10 +23,12 @@ public class GameUI : MonoBehaviour
         {
             if (isPaused)
             {
+                Debug.Log("PauseCanceled");
                 Continue();
             }
-            else
+            else if(!isPaused)
             {
+                Debug.Log("PauseActivated");
                 Pause();
             }
         }
@@ -36,12 +38,14 @@ public class GameUI : MonoBehaviour
     
     public void Continue()
     {
+        isPaused = false;
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
     }
 
     public void Pause()
     {
+        isPaused = true;
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
     }
