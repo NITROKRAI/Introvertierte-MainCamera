@@ -40012,7 +40012,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7237569407289590192, guid: 006b9b8d2bd0ce94b9a5e4a5efd16b02, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7237569407289590194, guid: 006b9b8d2bd0ce94b9a5e4a5efd16b02, type: 3}
       propertyPath: Data
@@ -89526,6 +89526,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: pistol_grip_pump_shotgun
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0fde532507eaf0b428a03b5162ca2aea, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 0fde532507eaf0b428a03b5162ca2aea, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fde532507eaf0b428a03b5162ca2aea, type: 3}
 --- !u!1001 &1736769454
@@ -108382,7 +108390,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450652042842924}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108398,7 +108406,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450652587335781}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: AssaultRifle_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109547,7 +109555,7 @@ GameObject:
   - component: {fileID: 1151388028099027572}
   - component: {fileID: 2823090748052265790}
   - component: {fileID: 1587545475450142634}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109565,7 +109573,7 @@ GameObject:
   - component: {fileID: 1151388027518521661}
   - component: {fileID: 2823090747438475383}
   - component: {fileID: 1587545475020492003}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
