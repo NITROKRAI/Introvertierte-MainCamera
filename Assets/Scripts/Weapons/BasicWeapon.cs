@@ -31,11 +31,13 @@ public class BasicWeapon : Weapon
     public float DamageReference;
     public float BulletDamage;
     public GameObject BulletCasingPosition;
+    [SerializeField] AudioSource ShootSound;
+    [SerializeField] AudioSource ReloadSound;
     // Start is called before the first frame update
     void Start()
     {
 
-        
+    
         BulletRB = Bullet.GetComponent<Rigidbody>();
         ammo = Data.Ammo;
         canShoot = true;
@@ -83,6 +85,7 @@ public class BasicWeapon : Weapon
     }
     public override void Shoot()
     {
+        ShootSound.Play();
         muzleFlash.Play();
         BulletCasing.Play();
         canShoot = false;
@@ -135,5 +138,6 @@ public class BasicWeapon : Weapon
         //Fill magazine
         ammo = Data.Ammo;
         isReloading = false;
+        ReloadSound.Play();
     }
 }

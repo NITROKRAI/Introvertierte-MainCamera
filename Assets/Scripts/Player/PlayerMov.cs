@@ -7,10 +7,11 @@ public class PlayerMov : MonoBehaviour
     public float PlayerSpeed;
     private float xAxis;
     private float zAxis;
-
+    public MobData Data;
     public float DashSpeed;
     public float DashTime;
     private bool isDashing;
+    [SerializeField] AudioSource DashSound;
     [SerializeField] ParticleSystem DashParticleSystem;
 
     Vector3 dir;
@@ -73,7 +74,8 @@ public class PlayerMov : MonoBehaviour
     IEnumerator Dashing()
     {
         isDashing = true;
-
+        Data.IsInvincible = true;
+        DashSound.Play();
         if (xAxis != 0 || zAxis != 0)
         {
             rb.AddForce(new Vector3(xAxis, 0, zAxis).normalized * DashSpeed, ForceMode.Impulse);
@@ -84,7 +86,7 @@ public class PlayerMov : MonoBehaviour
             rb.AddForce(transform.forward * DashSpeed, ForceMode.Impulse);
             yield return new WaitForSeconds(DashTime);
         }
-
         isDashing = false;
+        Data.IsInvincible = false;
     }
 }

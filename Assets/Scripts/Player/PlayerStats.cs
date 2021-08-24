@@ -6,7 +6,7 @@ public class PlayerStats : MonoBehaviour
 {
     public MobData Data;
     public float CurrentHealth;
-
+    [SerializeField] AudioSource HurtSound;
     private bool alreadyGetHeart;
 
     // Start is called before the first frame update
@@ -35,14 +35,12 @@ public class PlayerStats : MonoBehaviour
 
         if (other.gameObject.CompareTag("Enemy Bullet") && Data.IsInvincible == false)
         {
-            CurrentHealth -= 1;
-            Invincibility();
+            TakeDamage();
         }
 
         if (other.gameObject.CompareTag("Trap") && Data.IsInvincible == false)
         {
-            CurrentHealth -= 1;
-            Invincibility();
+            TakeDamage();
         }
     }
 
@@ -50,8 +48,7 @@ public class PlayerStats : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy") && Data.IsInvincible == false)
         {
-            CurrentHealth -= 1;
-            Invincibility();
+            TakeDamage();
         }        
     }
 
@@ -76,6 +73,12 @@ public class PlayerStats : MonoBehaviour
     {
         Data.IsInvincible = true;
         Invoke("ResetInvincibility", Data.InvincibilityTimer);
+        
+        
+            Renderer[] RendererArray = GetComponentsInChildren<Renderer>();
+            foreach (Renderer r in RendererArray)
+            r.enabled = false;
+        
     }
     void ResetInvincibility()
     {
@@ -86,5 +89,11 @@ public class PlayerStats : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         alreadyGetHeart = false;
+    }
+    void TakeDamage()
+    {
+        Invincibility();
+        CurrentHealth -= 1;
+        HurtSound.Play();
     }
 }

@@ -11,9 +11,11 @@ public class Bullet : MonoBehaviour
     public float lifeSpan;
     public float test;
     public GameObject ParticlePrefab;
+    public GameObject RaycastPos;
     Vector3 prevPos;
     public LayerMask LayerMask;
     public ParticleSystem BulletHole;
+    string otherTag;
     void Start()
     {
         prevPos = transform.position;
@@ -35,6 +37,20 @@ public class Bullet : MonoBehaviour
         //RaycastHit hit;
         //ray = Physics.Raycast(new Ray(prevPos, (transform.position - prevPos).normalized), (transform.position - prevPos).magnitude);
         BulletLifeSpan();
+    }
+    void FixedUpdate()
+    {
+        Ray ray;
+        prevPos = transform.position;
+        RaycastHit hitI;
+        if (Physics.Raycast(transform.position, transform.forward, out hitI,1f, LayerMask))
+        {
+            if (hitI.collider.CompareTag("World"))
+            {
+                Instantiate(BulletHole, hitI.point, Quaternion.LookRotation(hitI.normal));
+                Debug.Log("raycasthit");
+            }
+        }
     }
     //void SetDirection(Vector3 dir)
     //{
@@ -60,26 +76,45 @@ public class Bullet : MonoBehaviour
     }
     public void OnTriggerEnter(Collider other)
     {
-        RaycastHit hitI;
-        if (Physics.Raycast(transform.position, transform.forward, out hitI, LayerMask))
+        otherTag = other.gameObject.tag;
+        switch(otherTag)
         {
-            if (hitI.collider.CompareTag("World"))
-            {
-                Instantiate(BulletHole, hitI.point, Quaternion.LookRotation(hitI.normal));
-                Debug.Log("raycasthit");
-            }
-
-        }
-        if (gameObject.tag == "Player Bullet")
-        {
-            if (other.tag == "Enemy")
-            {
+            case "Enemy":
                 triggerEnemy = other.gameObject;
                 triggerEnemy.GetComponent<Enemy>().health -= damage;
                 gameObject.SetActive(false);
-            }
+                break;
+            case "World":
+                gameObject.SetActive(false);
+                break;
+            default:
+
+                break;
         }
- 
+        //RaycastHit hitI;
+        //if (Physics.Raycast(RaycastPos.transform.position, transform.forward, out hitI, LayerMask))
+        //{
+        //    if (hitI.collider.CompareTag("World"))
+        //    {
+        //        Instantiate(BulletHole, hitI.point, Quaternion.LookRotation(hitI.normal));
+        //        Debug.Log("raycasthit");
+        //    }
+
+        //}
+        //if (gameObject.tag == "Player Bullet")
+        //{
+        //    if (other.tag == "Enemy")
+        //    {
+        //        triggerEnemy = other.gameObject;
+        //        triggerEnemy.GetComponent<Enemy>().health -= damage;
+        //        gameObject.SetActive(false);
+        //    }
+        //    if (other.tag == "World")
+        //    {
+        //        gameObject.SetActive(false);
+        //    }
+        //}
+        
     }
     //public void OnColliderEnter(Collider other)
     //{

@@ -7,7 +7,7 @@ public class ShootingEnemy : MonoBehaviour
 {
     [SerializeField] private GameObject bulletSpawnPoint;
     [SerializeField] private GameObject Bullet;
-
+    [SerializeField] ParticleSystem PukeEffect;
     public NavMeshAgent agent;
     private Transform player;
     public LayerMask whatIsGround, whatIsPlayer;
@@ -79,6 +79,7 @@ public class ShootingEnemy : MonoBehaviour
 
         if (Bullet != null)
         {
+            PukeEffect.Play();
             Bullet.tag = "Enemy Bullet";
             Bullet.transform.position = bulletSpawnPoint.transform.position;
             Bullet.transform.rotation = bulletSpawnPoint.transform.rotation;
