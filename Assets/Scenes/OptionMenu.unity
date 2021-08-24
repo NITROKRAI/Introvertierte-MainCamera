@@ -820,9 +820,6 @@ MonoBehaviour:
   - {fileID: 2144903576}
   - {fileID: 493027416}
   masterMixer: {fileID: 24100000, guid: 78bd9ce1222daa04aae183a442fe261a, type: 2}
-  masterSlider: {fileID: 0}
-  musicSlider: {fileID: 0}
-  sfxSlider: {fileID: 0}
 --- !u!114 &616869993
 MonoBehaviour:
   m_ObjectHideFlags: 0
