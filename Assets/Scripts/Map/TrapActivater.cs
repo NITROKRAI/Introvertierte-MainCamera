@@ -10,6 +10,8 @@ public class TrapActivater : MonoBehaviour
     private Vector3 activPosition;    
 
     [SerializeField] private float activationDuration;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip trapSound;
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +45,7 @@ public class TrapActivater : MonoBehaviour
         Debug.Log("Trap is activ");
         isActivated = true;
         parent.position = activPosition;
+        audioSource.PlayOneShot(trapSound);
 
         yield return new WaitForSeconds(activationDuration);
 

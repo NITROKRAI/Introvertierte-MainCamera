@@ -7,7 +7,11 @@ public class DoorUp : MonoBehaviour
     Rigidbody rb;
     public float speed = 0.09f;
     private bool isUnlocked = false;
+    
     [SerializeField] private Transform[] movingPoints;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip doorSound;
+    
     Vector3 defaultPosition;
     Vector3 endPosition;
     Vector3 localScale;
@@ -60,14 +64,16 @@ public class DoorUp : MonoBehaviour
 
     public void OpenDoor()
     {        
-            //rb.velocity = (new Vector3(rb.position.x, speed, rb.position.z));
-            rb.MovePosition(Vector3.Lerp(transform.position,endPosition,speed));         
+        //rb.velocity = (new Vector3(rb.position.x, speed, rb.position.z));
+        rb.MovePosition(Vector3.Lerp(transform.position,endPosition,speed));
+        audioSource.PlayOneShot(doorSound);
     }
 
     public void CloseDoor()
     {
-            //rb.velocity = (new Vector3(rb.position.x, -speed, rb.position.z));
-            rb.MovePosition(Vector3.Lerp(transform.position, defaultPosition, speed));
+        //rb.velocity = (new Vector3(rb.position.x, -speed, rb.position.z));
+        rb.MovePosition(Vector3.Lerp(transform.position, defaultPosition, speed));
+        audioSource.PlayOneShot(doorSound);
     }
 
     public void Unlock()
