@@ -5,10 +5,10 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     public MobData Data;
-    public float CurrentHealth;
-    [SerializeField] AudioSource HurtSound;
+    public float CurrentHealth;    
     private bool alreadyGetHeart;
-    public float elapsedTime;
+    public float elapsedTime;    
+    [SerializeField] AudioSource HurtSound;    
     // Start is called before the first frame update
     void Start()
     {

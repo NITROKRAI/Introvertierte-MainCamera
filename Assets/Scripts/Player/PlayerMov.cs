@@ -11,10 +11,14 @@ public class PlayerMov : MonoBehaviour
     public float DashSpeed;
     public float DashTime;
     private bool isDashing;
+    private int lastStepSound, newStepSound;
     [SerializeField] AudioSource DashSound;
     [SerializeField] ParticleSystem DashParticleSystem;
+    [SerializeField] AudioClip[] stepSounds;
+    [SerializeField] AudioSource StepSound;
 
     Vector3 dir;
+    Vector3 velocity;
 
     private Rigidbody rb;
 
@@ -25,6 +29,7 @@ public class PlayerMov : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        
     }
 
     void Update()
@@ -36,7 +41,7 @@ public class PlayerMov : MonoBehaviour
                 StartCoroutine(Dashing());
             }
         }
-
+        
         RotatePlayer();
     }
 
@@ -45,7 +50,8 @@ public class PlayerMov : MonoBehaviour
         if (!isDashing)
         {
             Run(dir);
-        }
+        }        
+        
     }
 
     private void Run(Vector3 dir)
@@ -69,6 +75,17 @@ public class PlayerMov : MonoBehaviour
             targetRotation.z = 0;
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, TurnSpeed * Time.deltaTime);
         }
+    }
+
+    private void MakeStepSound()
+    {
+        do
+        {
+            newStepSound = Random.Range(0, stepSounds.Length - 1);
+        } while (newStepSound == lastStepSound);        
+        lastStepSound = newStepSound;        
+        
+        StepSound.PlayOneShot(stepSounds[lastStepSound]);
     }
 
     IEnumerator Dashing()
