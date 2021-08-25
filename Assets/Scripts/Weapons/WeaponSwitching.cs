@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class WeaponSwitching : MonoBehaviour
@@ -10,11 +11,11 @@ public class WeaponSwitching : MonoBehaviour
     public GameObject WeaponHolder;
     public GameObject currentWeapon;
     public Transform[] allchildren;
+    public Image ReloadInHud;
 
     void Start()
     {
         WeaponInventory();
-        //GameObject[] allchildren = this.transform.GetComponentsInChildren<GameObject>();
     }
 
     // Update is called once per frame
@@ -22,15 +23,11 @@ public class WeaponSwitching : MonoBehaviour
     {
         totalWeapons = WeaponHolder.transform.childCount;
         SelectWeapon();
-        //Transform[] allchildren = this.transform.GetComponentsInChildren<Transform>();
         weapons = GameObject.FindGameObjectsWithTag("Equipped");
         currentWeapon = weapons[currentWeaponIndex].transform.gameObject;
     }
     void WeaponInventory()
     {
-        //totalWeapons = WeaponHolder.transform.childCount;
-        //totalWeapons = 4;
-        //weapons = GameObject.FindGameObjectsWithTag("Equipped");
 
         for (int i = 0; i < weapons.Length; i++)
         {
@@ -39,8 +36,6 @@ public class WeaponSwitching : MonoBehaviour
            //weapons[i].SetActive(false);
 
         }
-        //weapons[0].SetActive(true);
-        //currentWeapon = weapons[0];
         currentWeaponIndex = 0;
     }
     void SelectWeapon()
@@ -49,36 +44,39 @@ public class WeaponSwitching : MonoBehaviour
         {
             if (currentWeaponIndex < weapons.Length - 1)
             {
-                //weapons[currentWeaponIndex].SetActive(false);
                 for (int i = 0; i < weapons[currentWeaponIndex].transform.childCount; i++)
                 {
+                    ReloadInHud.fillAmount = 0;
                     var child = weapons[currentWeaponIndex].transform.GetChild(i).gameObject;
                     if (child != null)
                         child.SetActive(false);
                 }
                 currentWeaponIndex += 1;
-                //weapons[currentWeaponIndex].SetActive(true);
                 for (int i = 0; i < weapons[currentWeaponIndex].transform.childCount; i++)
                 {
+                    ReloadInHud.fillAmount = 0;
                     var child = weapons[currentWeaponIndex].transform.GetChild(i).gameObject;
                     if (child != null)
                         child.SetActive(true);
                 }
+
             }
             else
-            {
+                {
                 for (int i = 0; i < weapons[currentWeaponIndex].transform.childCount; i++)
-               {
+                {
+                    ReloadInHud.fillAmount = 0;
                     var child = weapons[currentWeaponIndex].transform.GetChild(i).gameObject;
                     if (child != null)
-                        child.SetActive(false);
+                    child.SetActive(false);
                 }
                 currentWeaponIndex = 0;
                 for (int i = 0; i < weapons[currentWeaponIndex].transform.childCount; i++)
                 {
+                    ReloadInHud.fillAmount = 0;
                     var child = weapons[currentWeaponIndex].transform.GetChild(i).gameObject;
                     if (child != null)
-                        child.SetActive(true);
+                    child.SetActive(true);
                 }
             }
         }

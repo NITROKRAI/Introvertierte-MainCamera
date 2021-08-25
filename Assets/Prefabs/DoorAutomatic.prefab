@@ -21,9 +21,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 545317656050468874, guid: 858d5df52f82cd242af5304dddc8fab1, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: fc9e378ac5ab04f40b42b2ed5b776ae1, type: 3}
     - target: {fileID: 3326715498361760786, guid: 858d5df52f82cd242af5304dddc8fab1, type: 3}
       propertyPath: m_Name
       value: DoorAutomatic
+      objectReference: {fileID: 0}
+    - target: {fileID: 3326715498361760872, guid: 858d5df52f82cd242af5304dddc8fab1, type: 3}
+      propertyPath: doorSound
+      value: 
+      objectReference: {fileID: 8300000, guid: fc9e378ac5ab04f40b42b2ed5b776ae1, type: 3}
+    - target: {fileID: 3326715498361760872, guid: 858d5df52f82cd242af5304dddc8fab1, type: 3}
+      propertyPath: audioSource
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3326715498361760878, guid: 858d5df52f82cd242af5304dddc8fab1, type: 3}
       propertyPath: m_RootOrder

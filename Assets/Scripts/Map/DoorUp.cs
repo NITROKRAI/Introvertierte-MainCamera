@@ -66,14 +66,14 @@ public class DoorUp : MonoBehaviour
     {        
         //rb.velocity = (new Vector3(rb.position.x, speed, rb.position.z));
         rb.MovePosition(Vector3.Lerp(transform.position,endPosition,speed));
-        audioSource.PlayOneShot(doorSound);
+        //audioSource.PlayOneShot(doorSound);
     }
 
     public void CloseDoor()
     {
         //rb.velocity = (new Vector3(rb.position.x, -speed, rb.position.z));
         rb.MovePosition(Vector3.Lerp(transform.position, defaultPosition, speed));
-        audioSource.PlayOneShot(doorSound);
+        //audioSource.PlayOneShot(doorSound);
     }
 
     public void Unlock()

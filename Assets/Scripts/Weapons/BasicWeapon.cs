@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BasicWeapon : Weapon
 {
@@ -9,21 +10,10 @@ public class BasicWeapon : Weapon
     public float ammo;
     public bool canShoot;
     public bool isShooting;
-    float damage;
-    float fireRate;
-    bool infiniteAmmo;
-    float reloadTime;
-    float spread;
-    bool needsToBeCharged;
-    float timeTillNextShot;
     public bool isReloading;
     public int BulletsShot;
-    List<Quaternion> Bullets;
     public int spreadAngle;
     public bool allowInvoke = true;
-    float randomSpreadY;
-    float minSpread = 0.1f;
-    float maxSpread = 0.3f;
     public Rigidbody BulletRB;
     public GameObject[] bulletSpawnPoints = new GameObject[0];
     public ParticleSystem muzleFlash;
@@ -33,7 +23,12 @@ public class BasicWeapon : Weapon
     public GameObject BulletCasingPosition;
     [SerializeField] AudioClip ShootSound;
     [SerializeField] AudioSource ReloadSound;
+    [SerializeField] Sprite WeaponSprite;
     AudioSource audioSource;
+    public Image SpriteInHud;
+    public Image ReloadInHud;
+    public Text ammoDisplay;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -51,8 +46,17 @@ public class BasicWeapon : Weapon
     }
     void Update()
     {
+        //if(ammo <= 0)
+        //{
+        //    Reload();
+        //}
+        SpriteInHud.sprite = WeaponSprite;
+        ReloadInHud.sprite = WeaponSprite;
+        ammoDisplay.text = ammo.ToString()+"/"+Data.Ammo;
+        ShowReloadInHud();
         InputCheck();
     }
+
     void InputCheck()
     {
         if (Input.GetButton("Fire1"))
@@ -113,26 +117,29 @@ public class BasicWeapon : Weapon
             }
 
         }
-        if(Data.ammoCasingAfterEachShot)
-        {
-            
-        }
-        
     }
+
     private void ResetShot()
     {
-        //Allow shooting and invoking again
         canShoot = true;
         allowInvoke = true;
     }
+
     public override void Reload()
     {
+        ReloadInHud.fillAmount = 1;
         isReloading = true;
         Invoke("ReloadFinished", Data.ReloadTime);
-        if (Data.ejectMagazineOnReload)
-        {
+    }
 
+    void ShowReloadInHud()
+    {
+        if(isReloading == true)
+        {
+            Debug.Log("DDDDD");
+            ReloadInHud.fillAmount -= 1 / Data.ReloadTime * Time.deltaTime;
         }
+        
     }
     private void ReloadFinished()
     {

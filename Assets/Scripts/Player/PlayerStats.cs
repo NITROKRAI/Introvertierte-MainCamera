@@ -15,8 +15,8 @@ public class PlayerStats : MonoBehaviour
         Data.IsInvincible = false;
         CurrentHealth = Data.Health;
     }
-
     // Update is called once per frame
+
     void Update()
     {
         
@@ -59,7 +59,6 @@ public class PlayerStats : MonoBehaviour
         {
             return;
         }
-
         if (CurrentHealth < 6)
         {
             alreadyGetHeart = true;
@@ -72,8 +71,6 @@ public class PlayerStats : MonoBehaviour
 
     void Invincibility()
     {
-        //StartCoroutine(Flash());
-
         elapsedTime = 0;
         Data.IsInvincible = true;
         Invoke("ResetInvincibility", Data.InvincibilityTimer);
@@ -94,19 +91,4 @@ public class PlayerStats : MonoBehaviour
         CurrentHealth -= 1;
         HurtSound.Play();
     }
-    //IEnumerator Flash()
-    //{
-    //    while (elapsedTime < 10)
-    //    {
-
-    //    elapsedTime += Time.deltaTime;
-    //    Renderer[] RendererArray = GetComponentsInChildren<Renderer>();
-    //    foreach (Renderer r in RendererArray)
-    //    r.enabled = false;
-    //    yield return new WaitForSeconds(1f);
-    //    foreach (Renderer r in RendererArray)
-    //    r.enabled = true;
-            
-    //    }
-    //}
 }
