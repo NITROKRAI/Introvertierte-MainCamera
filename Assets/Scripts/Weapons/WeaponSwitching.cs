@@ -40,7 +40,7 @@ public class WeaponSwitching : MonoBehaviour
     }
     void SelectWeapon()
     {
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             if (currentWeaponIndex < weapons.Length - 1)
             {

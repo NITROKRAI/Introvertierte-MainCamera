@@ -308,6 +308,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BasicGhostEnemy 1 (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 7281553306896234020, guid: b7bc62a8856ffbc41a4e01abce97608d, type: 3}
+      propertyPath: sightRange
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7281553306896234041, guid: b7bc62a8856ffbc41a4e01abce97608d, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -1387,6 +1391,10 @@ PrefabInstance:
     - target: {fileID: 7281553306896234017, guid: b7bc62a8856ffbc41a4e01abce97608d, type: 3}
       propertyPath: m_Name
       value: BasicGhostEnemy 1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281553306896234020, guid: b7bc62a8856ffbc41a4e01abce97608d, type: 3}
+      propertyPath: sightRange
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 7281553306896234041, guid: b7bc62a8856ffbc41a4e01abce97608d, type: 3}
       propertyPath: m_RootOrder
@@ -4593,6 +4601,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShootingEnemy (2) 1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8419997621782009817, guid: 9f90bfd075d01364e98a53e363cd9ed7, type: 3}
+      propertyPath: sightRange
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 8419997621782009826, guid: 9f90bfd075d01364e98a53e363cd9ed7, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -4721,6 +4733,10 @@ PrefabInstance:
     - target: {fileID: 7281553306896234017, guid: b7bc62a8856ffbc41a4e01abce97608d, type: 3}
       propertyPath: m_Name
       value: BasicGhostEnemy 1 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281553306896234020, guid: b7bc62a8856ffbc41a4e01abce97608d, type: 3}
+      propertyPath: sightRange
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 7281553306896234041, guid: b7bc62a8856ffbc41a4e01abce97608d, type: 3}
       propertyPath: m_RootOrder
@@ -7339,6 +7355,10 @@ PrefabInstance:
     - target: {fileID: 7281553306896234017, guid: b7bc62a8856ffbc41a4e01abce97608d, type: 3}
       propertyPath: m_Name
       value: BasicGhostEnemy 1 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281553306896234020, guid: b7bc62a8856ffbc41a4e01abce97608d, type: 3}
+      propertyPath: sightRange
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 7281553306896234041, guid: b7bc62a8856ffbc41a4e01abce97608d, type: 3}
       propertyPath: m_RootOrder
@@ -15888,6 +15908,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShootingEnemy (2) 1 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 8419997621782009817, guid: 9f90bfd075d01364e98a53e363cd9ed7, type: 3}
+      propertyPath: sightRange
+      value: 24
+      objectReference: {fileID: 0}
     - target: {fileID: 8419997621782009826, guid: 9f90bfd075d01364e98a53e363cd9ed7, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -20363,6 +20387,10 @@ PrefabInstance:
     - target: {fileID: 8419997621782009816, guid: 9f90bfd075d01364e98a53e363cd9ed7, type: 3}
       propertyPath: m_Name
       value: ShootingEnemy (2) 1 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419997621782009817, guid: 9f90bfd075d01364e98a53e363cd9ed7, type: 3}
+      propertyPath: sightRange
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8419997621782009826, guid: 9f90bfd075d01364e98a53e363cd9ed7, type: 3}
       propertyPath: m_RootOrder
@@ -49758,6 +49786,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShootingEnemy (2) 1 (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 8419997621782009817, guid: 9f90bfd075d01364e98a53e363cd9ed7, type: 3}
+      propertyPath: sightRange
+      value: 22
+      objectReference: {fileID: 0}
     - target: {fileID: 8419997621782009826, guid: 9f90bfd075d01364e98a53e363cd9ed7, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -54787,6 +54819,10 @@ PrefabInstance:
     - target: {fileID: 7281553306896234017, guid: b7bc62a8856ffbc41a4e01abce97608d, type: 3}
       propertyPath: m_Name
       value: BasicGhostEnemy 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281553306896234020, guid: b7bc62a8856ffbc41a4e01abce97608d, type: 3}
+      propertyPath: sightRange
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 7281553306896234041, guid: b7bc62a8856ffbc41a4e01abce97608d, type: 3}
       propertyPath: m_RootOrder
@@ -66745,6 +66781,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BasicGhostEnemy 1 (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 7281553306896234020, guid: b7bc62a8856ffbc41a4e01abce97608d, type: 3}
+      propertyPath: sightRange
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7281553306896234041, guid: b7bc62a8856ffbc41a4e01abce97608d, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -77831,6 +77871,10 @@ PrefabInstance:
     - target: {fileID: 7281553306896234017, guid: b7bc62a8856ffbc41a4e01abce97608d, type: 3}
       propertyPath: m_Name
       value: BasicGhostEnemy 1 (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281553306896234020, guid: b7bc62a8856ffbc41a4e01abce97608d, type: 3}
+      propertyPath: sightRange
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 7281553306896234041, guid: b7bc62a8856ffbc41a4e01abce97608d, type: 3}
       propertyPath: m_RootOrder
@@ -91480,6 +91524,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BasicGhostEnemy 1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7281553306896234020, guid: b7bc62a8856ffbc41a4e01abce97608d, type: 3}
+      propertyPath: sightRange
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 7281553306896234041, guid: b7bc62a8856ffbc41a4e01abce97608d, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -93994,7 +94042,6 @@ GameObject:
   - component: {fileID: 1819392972}
   - component: {fileID: 1819392971}
   - component: {fileID: 1819392974}
-  - component: {fileID: 1819392975}
   m_Layer: 0
   m_Name: Portal
   m_TagString: Untagged
@@ -94090,104 +94137,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf65ffaea86c5564fa319d1961cc9b73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 1819392975}
-  portalSound: {fileID: 8300000, guid: c7e835e8023cbb245a341e04d35e204d, type: 3}
---- !u!82 &1819392975
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1819392969}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 5206267802809513302, guid: 78bd9ce1222daa04aae183a442fe261a, type: 2}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 0.737
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &1836554789
 GameObject:
   m_ObjectHideFlags: 0
@@ -100875,6 +100824,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShootingEnemy (2) 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8419997621782009817, guid: 9f90bfd075d01364e98a53e363cd9ed7, type: 3}
+      propertyPath: sightRange
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 8419997621782009826, guid: 9f90bfd075d01364e98a53e363cd9ed7, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -106202,6 +106155,10 @@ PrefabInstance:
     - target: {fileID: 7281553306896234017, guid: b7bc62a8856ffbc41a4e01abce97608d, type: 3}
       propertyPath: m_Name
       value: BasicGhostEnemy 1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281553306896234020, guid: b7bc62a8856ffbc41a4e01abce97608d, type: 3}
+      propertyPath: sightRange
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 7281553306896234041, guid: b7bc62a8856ffbc41a4e01abce97608d, type: 3}
       propertyPath: m_RootOrder
