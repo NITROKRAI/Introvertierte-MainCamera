@@ -32,7 +32,6 @@ public class GameUI : MonoBehaviour
                 Pause();
             }
         }
-
         OpenDeath();
     }
     

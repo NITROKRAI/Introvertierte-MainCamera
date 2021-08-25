@@ -5,15 +5,13 @@ using UnityEngine;
 public class DoorOpenerGround: MonoBehaviour
 {    
     [SerializeField] private GameObject lockedDoor;
-
-    //private DoorUp doorUpFind;
+    
     private DoorUp doorUp;
     private Vector3 plate;
 
     // Start is called before the first frame update
     void Start()
     {
-        //doorUpFind = FindObjectOfType<DoorUp>();
         doorUp = lockedDoor.GetComponent<DoorUp>();
         plate = transform.position;
     }

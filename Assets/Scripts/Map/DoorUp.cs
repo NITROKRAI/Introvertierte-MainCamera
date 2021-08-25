@@ -13,25 +13,13 @@ public class DoorUp : MonoBehaviour
     [SerializeField] private AudioClip doorSound;
     
     Vector3 defaultPosition;
-    Vector3 endPosition;
-    Vector3 localScale;
+    Vector3 endPosition;    
     
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        GetChildPosition();
-       /*
-        //Start- und Zielstellung der Tür werden mit festen Punkten festgelegt
-        movingPoints = new Transform[transform.childCount];               
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            movingPoints[i] = transform.GetChild(i).transform;
-        }
-        defaultPosition = movingPoints[0].position;
-        endPosition = movingPoints[1].position;
-        Debug.Log("default " + defaultPosition);
-       */
+        GetChildPosition();       
     }
 
     // Update is called once per frame
@@ -48,9 +36,9 @@ public class DoorUp : MonoBehaviour
         
     }
 
+    //Start- und Zielstellung der Tür werden mit festen Punkten festgelegt
     private void GetChildPosition()
-    {
-        //Start- und Zielstellung der Tür werden mit festen Punkten festgelegt
+    {        
         movingPoints = new Transform[transform.childCount];
         for (int i = 0; i < transform.childCount; i++)
         {
@@ -64,16 +52,12 @@ public class DoorUp : MonoBehaviour
 
     public void OpenDoor()
     {        
-        //rb.velocity = (new Vector3(rb.position.x, speed, rb.position.z));
         rb.MovePosition(Vector3.Lerp(transform.position,endPosition,speed));
-        //audioSource.PlayOneShot(doorSound);
     }
 
     public void CloseDoor()
     {
-        //rb.velocity = (new Vector3(rb.position.x, -speed, rb.position.z));
         rb.MovePosition(Vector3.Lerp(transform.position, defaultPosition, speed));
-        //audioSource.PlayOneShot(doorSound);
     }
 
     public void Unlock()

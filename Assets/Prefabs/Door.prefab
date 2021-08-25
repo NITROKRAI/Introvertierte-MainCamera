@@ -130,7 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.09
   movingPoints: []
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 545317656050468874}
   doorSound: {fileID: 8300000, guid: fc9e378ac5ab04f40b42b2ed5b776ae1, type: 3}
 --- !u!82 &545317656050468874
 AudioSource:
@@ -141,7 +141,7 @@ AudioSource:
   m_GameObject: {fileID: 3326715498361760786}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 5206267802809513302, guid: 78bd9ce1222daa04aae183a442fe261a, type: 2}
   m_audioClip: {fileID: 8300000, guid: fc9e378ac5ab04f40b42b2ed5b776ae1, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
