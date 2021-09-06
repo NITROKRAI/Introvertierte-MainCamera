@@ -16,24 +16,20 @@ public class PlayerMov : MonoBehaviour
     [SerializeField] ParticleSystem DashParticleSystem;
     [SerializeField] AudioClip[] stepSounds;
     [SerializeField] AudioSource StepSound;
-
     Vector3 dir;
     Vector3 velocity;
-
     private Rigidbody rb;
-
     public float TurnSpeed;
     public LayerMask LayerMask;
-
-
+    float test;
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        
     }
 
     void Update()
     {
+        
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             if (!isDashing)
@@ -51,7 +47,6 @@ public class PlayerMov : MonoBehaviour
         {
             Run(dir);
         }        
-        
     }
 
     private void Run(Vector3 dir)

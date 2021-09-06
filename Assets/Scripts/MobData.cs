@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu()]
 public class MobData : ScriptableObject
 {
-    public float Health;
+    public int Health;
     public float MovementSpeed;
     public float InvincibilityTimer;
     public bool IsInvincible;

@@ -5,31 +5,28 @@ using UnityEngine;
 public class ObjectPool : MonoBehaviour
 {
     public static ObjectPool instance;
-    public GameObject poolingObject;
-    public List<GameObject> pooledObjects;
+    public GameObject PoolingObject;
+    public List<GameObject> PooledObjects;
     public int poolSize = 100;
 
-    void Awake() 
-    {
-        if(instance == null)
-        {
-            instance = this;
-        }
-        pooledObjects = new List<GameObject>();
+    void Awake()
+    { 
+        instance = this;
+        PooledObjects = new List<GameObject>();
         for(int i = 0; i < poolSize; i++)
         {
-            GameObject obj = Instantiate(poolingObject);
+            GameObject obj = Instantiate(PoolingObject);
             obj.SetActive(false);
-            pooledObjects.Add(obj);
+            PooledObjects.Add(obj);
         }
     }
     public GameObject GetPooledObject()
     {
         for(int i = 0; i < poolSize; i++)
         {
-            if(!pooledObjects[i].activeInHierarchy)
+            if(!PooledObjects[i].activeInHierarchy)
             {
-                return pooledObjects[i];
+                return PooledObjects[i];
             }
         }
         return null;

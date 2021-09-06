@@ -5,18 +5,18 @@ using UnityEngine.UI;
 
 public class BasicWeapon : Weapon
 {
-    public GameObject bulletSpawnPoint;
+    public GameObject BulletSpawnPoint;
     public GameObject Bullet;
-    public float ammo;
-    public bool canShoot;
-    public bool isShooting;
-    public bool isReloading;
+    public float Ammo;
+    public bool CanShoot;
+    public bool IsShooting;
+    public bool IsReloading;
     public int BulletsShot;
     public int spreadAngle;
     public bool allowInvoke = true;
     public Rigidbody BulletRB;
-    public GameObject[] bulletSpawnPoints = new GameObject[0];
-    public ParticleSystem muzleFlash;
+    public GameObject[] BulletSpawnPoints = new GameObject[0];
+    public ParticleSystem MuzleFlash;
     public ParticleSystem BulletCasing;
     public float DamageReference;
     public float BulletDamage;
@@ -27,7 +27,7 @@ public class BasicWeapon : Weapon
     AudioSource audioSource;
     public Image SpriteInHud;
     public Image ReloadInHud;
-    public Text ammoDisplay;
+    public Text AmmoDisplay;
     
     // Start is called before the first frame update
     void Start()
@@ -35,8 +35,8 @@ public class BasicWeapon : Weapon
 
         audioSource = GetComponent<AudioSource>();
         BulletRB = Bullet.GetComponent<Rigidbody>();
-        ammo = Data.Ammo;
-        canShoot = true;
+        Ammo = Data.Ammo;
+        CanShoot = true;
     }
 
     // Update is called once per frame
@@ -52,7 +52,7 @@ public class BasicWeapon : Weapon
         //}
         SpriteInHud.sprite = WeaponSprite;
         ReloadInHud.sprite = WeaponSprite;
-        ammoDisplay.text = ammo.ToString()+"/"+Data.Ammo;
+        AmmoDisplay.text = Ammo.ToString()+"/"+Data.Ammo;
         ShowReloadInHud();
         InputCheck();
     }
@@ -61,22 +61,22 @@ public class BasicWeapon : Weapon
     {
         if (Input.GetButton("Fire1"))
         {
-            isShooting = true;
+            IsShooting = true;
 
         }
         else
         {
-            isShooting = false;
+            IsShooting = false;
         }
-        if (Input.GetKeyDown(KeyCode.R) && ammo < Data.Ammo && !isReloading)
+        if (Input.GetKeyDown(KeyCode.R) && Ammo < Data.Ammo && !IsReloading)
         {
             Reload();
         }
-        if (canShoot && isShooting && !isReloading && ammo <= 0)
+        if (CanShoot && IsShooting && !IsReloading && Ammo <= 0)
         {
             Reload();
         }
-        if (canShoot && isShooting && !isReloading && ammo > 0)
+        if (CanShoot && IsShooting && !IsReloading && Ammo > 0)
         {
             //Set bullets shot to 0
             //bulletsShot = 0;
@@ -91,10 +91,10 @@ public class BasicWeapon : Weapon
     public override void Shoot()
     {
         audioSource.PlayOneShot(ShootSound);
-        muzleFlash.Play();
+        MuzleFlash.Play();
         BulletCasing.Play();
-        canShoot = false;
-        ammo--;
+        CanShoot = false;
+        Ammo--;
         if (allowInvoke)
         {
             Invoke("ResetShot", Data.FireRate);
@@ -102,17 +102,15 @@ public class BasicWeapon : Weapon
                 allowInvoke = false;
             }
         }
-        for (int d = 0; d < bulletSpawnPoints.Length; d++)
+        for (int d = 0; d < BulletSpawnPoints.Length; d++)
         {
             if (Bullet != null)
             {
             Instantiate(BulletCasing, BulletCasingPosition.transform.position, BulletCasingPosition.transform.rotation);   
-            Debug.Log("dick");
             GameObject Bullet = ObjectPool.instance.GetPooledObject();
             Bullet.tag = "Player Bullet";
-            DamageReference = Bullet.GetComponent<Bullet>().damage;
-            Bullet.transform.position = bulletSpawnPoints[d].transform.position;
-            Bullet.transform.rotation = bulletSpawnPoints[d].transform.rotation;
+            Bullet.transform.position = BulletSpawnPoints[d].transform.position;
+            Bullet.transform.rotation = BulletSpawnPoints[d].transform.rotation;
             Bullet.SetActive(true);
             }
 
@@ -121,22 +119,21 @@ public class BasicWeapon : Weapon
 
     private void ResetShot()
     {
-        canShoot = true;
+        CanShoot = true;
         allowInvoke = true;
     }
 
     public override void Reload()
     {
         ReloadInHud.fillAmount = 1;
-        isReloading = true;
+        IsReloading = true;
         Invoke("ReloadFinished", Data.ReloadTime);
     }
 
     void ShowReloadInHud()
     {
-        if(isReloading == true)
+        if(IsReloading == true)
         {
-            Debug.Log("DDDDD");
             ReloadInHud.fillAmount -= 1 / Data.ReloadTime * Time.deltaTime;
         }
         
@@ -144,8 +141,9 @@ public class BasicWeapon : Weapon
     private void ReloadFinished()
     {
         //Fill magazine
-        ammo = Data.Ammo;
-        isReloading = false;
+        Ammo = Data.Ammo;
+        IsReloading = false;
         ReloadSound.Play();
+        ReloadInHud.fillAmount = 0;
     }
 }

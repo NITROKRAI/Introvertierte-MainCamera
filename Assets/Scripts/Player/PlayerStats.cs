@@ -5,15 +5,17 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     public MobData Data;
-    public float CurrentHealth;    
+    public int CurrentHealth;    
     private bool alreadyGetHeart;
-    public float elapsedTime;    
-    [SerializeField] AudioSource HurtSound;    
+    public float ElapsedTime;    
+    [SerializeField] AudioSource HurtSound;
+    private Renderer r;
     // Start is called before the first frame update
     void Start()
     {
         Data.IsInvincible = false;
         CurrentHealth = Data.Health;
+        r = gameObject.GetComponent<Renderer>();
     }
     // Update is called once per frame
 
@@ -33,18 +35,15 @@ public class PlayerStats : MonoBehaviour
             GetHeart();
             Debug.Log("PlayerHeart");
         }
-
-        if (other.gameObject.CompareTag("Enemy Bullet") && Data.IsInvincible == false)
+        else if(other.gameObject.CompareTag("Enemy Bullet") && Data.IsInvincible == false)
         {
             TakeDamage();
         }
-
-        if (other.gameObject.CompareTag("Trap") && Data.IsInvincible == false)
+        else if(other.gameObject.CompareTag("Trap") && Data.IsInvincible == false)
         {
             TakeDamage();
         }
     }
-
     void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.CompareTag("Enemy") && Data.IsInvincible == false)
@@ -52,7 +51,6 @@ public class PlayerStats : MonoBehaviour
             TakeDamage();
         }        
     }
-
     public void GetHeart()
     {
         if (alreadyGetHeart)
@@ -68,18 +66,30 @@ public class PlayerStats : MonoBehaviour
         }
         
     }
-
     void Invincibility()
     {
-        elapsedTime = 0;
+        ElapsedTime = 0;
         Data.IsInvincible = true;
         Invoke("ResetInvincibility", Data.InvincibilityTimer);
+        StartCoroutine(Flash());
     } 
     void ResetInvincibility()
     {
         Data.IsInvincible = false;
     }
-
+    IEnumerator Flash()
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            //r.enabled = false;
+            r.material.color = Color.red;
+            yield return new WaitForSeconds(.1f);
+            //r.enabled = true;
+            r.material.color = Color.white;
+            yield return new WaitForSeconds(.1f);
+            
+        }
+    }
     IEnumerator AlreadyGetHeart()
     {
         yield return new WaitForSeconds(0.5f);

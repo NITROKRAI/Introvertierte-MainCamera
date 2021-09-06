@@ -7,16 +7,16 @@ using UnityEngine.SceneManagement;
 
 public class OptionMenu : MonoBehaviour
 {
-    public GameObject optionsMenu;
-    public Slider[] volumeSliders;
-    public AudioMixer masterMixer;
+    public GameObject OptionsMenu;
+    public Slider[] VolumeSliders;
+    public AudioMixer MasterMixer;
 
     // Start is called before the first frame update
     void Start()
     {
-        volumeSliders[0].value = PlayerPrefs.GetFloat("MasterVol"); 
-        volumeSliders[1].value = PlayerPrefs.GetFloat("MusicVol"); 
-        volumeSliders[2].value = PlayerPrefs.GetFloat("SFXVol");
+        VolumeSliders[0].value = PlayerPrefs.GetFloat("MasterVol"); 
+        VolumeSliders[1].value = PlayerPrefs.GetFloat("MusicVol"); 
+        VolumeSliders[2].value = PlayerPrefs.GetFloat("SFXVol");
     }
 
     public void BackToMain()
@@ -27,19 +27,19 @@ public class OptionMenu : MonoBehaviour
 
     public void SetMasterVolume(float sliderValue)
     {
-        masterMixer.SetFloat("MasterVol", Mathf.Log10(sliderValue) * 20);
+        MasterMixer.SetFloat("MasterVol", Mathf.Log10(sliderValue) * 20);
         PlayerPrefs.SetFloat("MasterVol", sliderValue);
     }
 
     public void SetMusicVolume(float sliderValue)
     {
-        masterMixer.SetFloat("MusicVol", Mathf.Log10(sliderValue) * 20);
+        MasterMixer.SetFloat("MusicVol", Mathf.Log10(sliderValue) * 20);
         PlayerPrefs.SetFloat("MusicVol", sliderValue);
     }
 
     public void SetSFXVolume(float sliderValue)
     {
-        masterMixer.SetFloat("SFXVol", Mathf.Log10(sliderValue) * 20);
+        MasterMixer.SetFloat("SFXVol", Mathf.Log10(sliderValue) * 20);
         PlayerPrefs.SetFloat("SFXVol", sliderValue);
     }
 

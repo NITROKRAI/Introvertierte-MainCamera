@@ -111,10 +111,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d63d3ae9d9731ca40bf4200ed8cb05c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerEnemy: {fileID: 0}
-  damage: 1
-  lifeSpan: 5
-  test: 0
+  Speed: 25
+  TriggerEnemy: {fileID: 0}
+  Damage: 1
+  LifeSpan: 0
   ParticlePrefab: {fileID: 4974689101474154780, guid: 05f8bc097725ea5488828f3e6b39725e, type: 3}
   RaycastPos: {fileID: 4149802007717485503}
   LayerMask:

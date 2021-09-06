@@ -5,7 +5,7 @@ using UnityEngine;
 public class DoorUp : MonoBehaviour
 {
     Rigidbody rb;
-    public float speed = 0.09f;
+    public float Speed = 0.09f;
     private bool isUnlocked = false;
     
     [SerializeField] private Transform[] movingPoints;
@@ -46,18 +46,18 @@ public class DoorUp : MonoBehaviour
         }
         defaultPosition = movingPoints[0].position;
         endPosition = movingPoints[1].position;
-        Debug.Log("default " + defaultPosition);
-        Debug.Log("Open " + endPosition);
+        //Debug.Log("default " + defaultPosition);
+        //Debug.Log("Open " + endPosition);
     }
 
     public void OpenDoor()
     {        
-        rb.MovePosition(Vector3.Lerp(transform.position,endPosition,speed));
+        rb.MovePosition(Vector3.Lerp(transform.position,endPosition,Speed));
     }
 
     public void CloseDoor()
     {
-        rb.MovePosition(Vector3.Lerp(transform.position, defaultPosition, speed));
+        rb.MovePosition(Vector3.Lerp(transform.position, defaultPosition, Speed));
     }
 
     public void Unlock()

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class IngameUI : MonoBehaviour
 {
-    public TMPro.TextMeshProUGUI playerLives;
-    public TMPro.TextMeshProUGUI playerLives2;
+    public TMPro.TextMeshProUGUI PlayerLives;
+    public TMPro.TextMeshProUGUI PlayerLives2;
 
     
     // Start is called before the first frame update

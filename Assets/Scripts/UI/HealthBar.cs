@@ -7,7 +7,7 @@ public class HealthBar : MonoBehaviour
 {
     [SerializeField]private MobData playerData;
     private PlayerStats playerStats;
-    public Slider slider;
+    public Slider Slider;
 
     private void Start()
     {
@@ -23,12 +23,12 @@ public class HealthBar : MonoBehaviour
 
     public void SetHealth(float health)
     {
-        slider.value = health;
+        Slider.value = health;
     }
 
     public void SetMaxHealth(float maxHealth)
     {
-        slider.maxValue = maxHealth;
-        slider.value = maxHealth;
+        Slider.maxValue = maxHealth;
+        Slider.value = maxHealth;
     }
 }

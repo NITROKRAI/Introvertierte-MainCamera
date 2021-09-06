@@ -19,7 +19,6 @@ public class DoorOpenerGround: MonoBehaviour
     {
         if ((col.gameObject.tag == "Player") || (col.gameObject.tag =="Box"))
         {
-            Debug.Log("contact with smth.");
             transform.position = new Vector3(plate.x, plate.y - 0.2f, plate.z);
 
             doorUp.Unlock();
@@ -28,7 +27,6 @@ public class DoorOpenerGround: MonoBehaviour
     
     private void OnTriggerExit(Collider col)
     {
-        Debug.Log("No contact with smth.");
         transform.position = new Vector3(plate.x, plate.y, plate.z);
 
         doorUp.Lock();

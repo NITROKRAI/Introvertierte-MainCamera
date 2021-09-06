@@ -4,18 +4,16 @@ using UnityEngine;
 
 public class PickUpController : MonoBehaviour
 {
-    public Transform player;
+    public Transform Player;
     public Transform WeaponHolderTra;
-    public float pickUpRange;
-    public float throwForceForward;
-    public float throwForceUpward;
+    public float PickUpRange;
     public WeaponSwitching Inv;
     public BasicWeapon WeaponScript;
     public GameObject Mesh;
     // Start is called before the first frame update
     void Start()
     {
-        if (Inv.currentWeapon == WeaponHolderTra.gameObject)
+        if (Inv.CurrentWeapon == WeaponHolderTra.gameObject)
         {
             WeaponScript.enabled = true;
             Mesh.SetActive(true);
@@ -29,7 +27,7 @@ public class PickUpController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Inv.currentWeapon == WeaponHolderTra.gameObject)
+        if(Inv.CurrentWeapon == WeaponHolderTra.gameObject)
         {
             WeaponScript.enabled = true;
             Mesh.SetActive(true);
@@ -38,8 +36,8 @@ public class PickUpController : MonoBehaviour
         {
             WeaponScript.enabled = false;
         }
-        Vector3 distanceToPlayer = player.position - transform.position;
-        if (distanceToPlayer.magnitude <= pickUpRange && Input.GetKeyDown(KeyCode.E))
+        Vector3 distanceToPlayer = Player.position - transform.position;
+        if (distanceToPlayer.magnitude <= PickUpRange && Input.GetKeyDown(KeyCode.E))
         {
             PickUp();
         }
@@ -51,5 +49,22 @@ public class PickUpController : MonoBehaviour
         transform.localRotation = Quaternion.Euler(Vector3.zero);
         transform.parent.tag = "Equipped";
         Mesh.SetActive(false);
+        Inv.Weapons = GameObject.FindGameObjectsWithTag("Equipped");
+        for (int i = 0; i < Inv.Weapons[Inv.CurrentWeaponIndex].transform.childCount; i++)
+        {
+            Inv.ReloadInHud.fillAmount = 0;
+            var child = Inv.Weapons[Inv.CurrentWeaponIndex].transform.GetChild(i).gameObject;
+            if (child != null)
+            child.SetActive(false);
+        }
+        Inv.CurrentWeaponIndex = Inv.Weapons.Length - 1;
+        Inv.CurrentWeapon = Inv.Weapons[Inv.CurrentWeaponIndex].transform.gameObject;
+        for (int i = 0; i < Inv.Weapons[Inv.CurrentWeaponIndex].transform.childCount; i++)
+        {
+            var child = Inv.Weapons[Inv.CurrentWeaponIndex].transform.GetChild(i).gameObject;
+            if (child != null)
+            child.SetActive(true);
+
+        }
     }
 }

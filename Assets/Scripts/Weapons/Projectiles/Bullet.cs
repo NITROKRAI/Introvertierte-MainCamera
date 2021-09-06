@@ -3,12 +3,11 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private float speed = 30;
-    public GameObject triggerEnemy;
-    public float damage;
+    public float Speed;
+    public GameObject TriggerEnemy;
+    public float Damage;
     private Rigidbody rb;
-    public float lifeSpan;
-    public float test;
+    public float LifeSpan;
     public GameObject ParticlePrefab;
     public GameObject RaycastPos;
     Vector3 prevPos;
@@ -37,25 +36,25 @@ public class Bullet : MonoBehaviour
             if (hitI.collider.CompareTag("World"))
             {
                 Instantiate(BulletHole, hitI.point, Quaternion.LookRotation(hitI.normal));
-                Debug.Log("raycasthit");
+                gameObject.SetActive(false);
             }
         }
     }
     private void OnEnable()
     {
         ApplyMovement();
-        lifeSpan = 0;
+        LifeSpan = 0;
     }
     void ApplyMovement()
     {
-        rb.velocity = transform.forward * speed;
+        rb.velocity = transform.forward * Speed;
     }
     public void BulletLifeSpan()
     {
-        lifeSpan += Time.deltaTime;
-        if (lifeSpan >= 5)
+        LifeSpan += Time.deltaTime;
+        if (LifeSpan >= 5)
         {
-            lifeSpan = 0;
+            LifeSpan = 0;
             gameObject.SetActive(false);
         }
     }
@@ -67,8 +66,8 @@ public class Bullet : MonoBehaviour
             switch (otherTag)
             {
                 case "Enemy":
-                    triggerEnemy = other.gameObject;
-                    triggerEnemy.GetComponent<Enemy>().health -= damage;
+                    TriggerEnemy = other.gameObject;
+                    TriggerEnemy.GetComponent<Enemy>().health -= Damage;
                     gameObject.SetActive(false);
                     break;
                 case "World":
