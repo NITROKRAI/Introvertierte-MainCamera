@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 6080762568766119415}
   - component: {fileID: 6080762568766119408}
   m_Layer: 3
-  m_Name: Pistol 1
+  m_Name: Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -203,8 +203,7 @@ MonoBehaviour:
   IsShooting: 0
   IsReloading: 0
   BulletsShot: 0
-  spreadAngle: 0
-  allowInvoke: 1
+  AllowInvoke: 1
   BulletRB: {fileID: 0}
   BulletSpawnPoints: []
   MuzleFlash: {fileID: 0}
@@ -218,6 +217,7 @@ MonoBehaviour:
   SpriteInHud: {fileID: 0}
   ReloadInHud: {fileID: 0}
   AmmoDisplay: {fileID: 0}
+  UI: {fileID: 873864410682596721, guid: 0d25831b9ab8f334fba86f798f2ceb9b, type: 3}
 --- !u!82 &6080762568766119415
 AudioSource:
   m_ObjectHideFlags: 0

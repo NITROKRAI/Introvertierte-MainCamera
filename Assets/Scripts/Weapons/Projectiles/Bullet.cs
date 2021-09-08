@@ -31,7 +31,7 @@ public class Bullet : MonoBehaviour
     {
         prevPos = transform.position;
         RaycastHit hitI;
-        if (Physics.Raycast(transform.position, transform.forward, out hitI,1f, LayerMask))
+        if (Physics.Raycast(transform.position, transform.forward, out hitI,0.6f, LayerMask))
         {
             if (hitI.collider.CompareTag("World"))
             {

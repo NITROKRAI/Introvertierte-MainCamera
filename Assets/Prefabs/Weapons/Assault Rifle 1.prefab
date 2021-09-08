@@ -202,8 +202,7 @@ MonoBehaviour:
   IsShooting: 0
   IsReloading: 0
   BulletsShot: 0
-  spreadAngle: 0
-  allowInvoke: 1
+  AllowInvoke: 1
   BulletRB: {fileID: 0}
   BulletSpawnPoints:
   - {fileID: 8416833890301434953}
@@ -218,6 +217,7 @@ MonoBehaviour:
   SpriteInHud: {fileID: 0}
   ReloadInHud: {fileID: 0}
   AmmoDisplay: {fileID: 0}
+  UI: {fileID: 873864410682596721, guid: 0d25831b9ab8f334fba86f798f2ceb9b, type: 3}
 --- !u!114 &8416833890416113829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,6 +236,8 @@ MonoBehaviour:
   Inv: {fileID: 0}
   WeaponScript: {fileID: 8416833890416113827}
   Mesh: {fileID: 4074208683683379428}
+  Data: {fileID: 11400000, guid: 72c5861337fd0fb4aab8578f99793f62, type: 2}
+  UI: {fileID: 873864410682596721, guid: 0d25831b9ab8f334fba86f798f2ceb9b, type: 3}
 --- !u!82 &8416833890416113830
 AudioSource:
   m_ObjectHideFlags: 0

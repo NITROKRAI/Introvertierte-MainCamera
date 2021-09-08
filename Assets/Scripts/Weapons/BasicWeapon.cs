@@ -12,8 +12,7 @@ public class BasicWeapon : Weapon
     public bool IsShooting;
     public bool IsReloading;
     public int BulletsShot;
-    public int spreadAngle;
-    public bool allowInvoke = true;
+    public bool AllowInvoke = true;
     public Rigidbody BulletRB;
     public GameObject[] BulletSpawnPoints = new GameObject[0];
     public ParticleSystem MuzleFlash;
@@ -32,7 +31,6 @@ public class BasicWeapon : Weapon
     // Start is called before the first frame update
     void Start()
     {
-
         audioSource = GetComponent<AudioSource>();
         BulletRB = Bullet.GetComponent<Rigidbody>();
         Ammo = Data.Ammo;
@@ -95,11 +93,11 @@ public class BasicWeapon : Weapon
         BulletCasing.Play();
         CanShoot = false;
         Ammo--;
-        if (allowInvoke)
+        if (AllowInvoke)
         {
             Invoke("ResetShot", Data.FireRate);
             {
-                allowInvoke = false;
+                AllowInvoke = false;
             }
         }
         for (int d = 0; d < BulletSpawnPoints.Length; d++)
@@ -120,7 +118,7 @@ public class BasicWeapon : Weapon
     private void ResetShot()
     {
         CanShoot = true;
-        allowInvoke = true;
+        AllowInvoke = true;
     }
 
     public override void Reload()

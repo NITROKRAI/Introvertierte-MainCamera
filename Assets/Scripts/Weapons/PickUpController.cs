@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PickUpController : MonoBehaviour
 {
@@ -10,9 +11,15 @@ public class PickUpController : MonoBehaviour
     public WeaponSwitching Inv;
     public BasicWeapon WeaponScript;
     public GameObject Mesh;
+    public WeaponData Data;
+    public GameObject UI;
+    public Text WeaponName;
+    public Text WeaponDescription;
+    public RawImage WeaponInfoBG;
     // Start is called before the first frame update
     void Start()
     {
+
         if (Inv.CurrentWeapon == WeaponHolderTra.gameObject)
         {
             WeaponScript.enabled = true;
@@ -44,6 +51,7 @@ public class PickUpController : MonoBehaviour
     }
     public void PickUp()
     {
+        DisplayWeaponInfo();
         transform.SetParent(WeaponHolderTra);
         transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.Euler(Vector3.zero);
@@ -66,5 +74,27 @@ public class PickUpController : MonoBehaviour
             child.SetActive(true);
 
         }
+    }
+    private void DisplayWeaponInfo()
+    {
+        WeaponName.text = Data.WeaponName;
+        WeaponDescription.text = Data.WeaponDescription;
+        WeaponName.gameObject.SetActive(true);
+        WeaponDescription.gameObject.SetActive(true);
+        //LeanTween.scale(WeaponName.gameObject, new Vector3(1, 1, 1), 0.5f);
+        //LeanTween.scale(WeaponDescription.gameObject, new Vector3(1, 1, 1), 0.5f);
+        //LeanTween.scale(WeaponInfoBG.gameObject, new Vector3(4f, 2f, 1f), 0.5f);
+        WeaponName.transform.LeanMoveLocal(new Vector2(0, -361), 2).setEaseOutQuart().setLoopPingPong(1);
+        WeaponDescription.transform.LeanMoveLocal(new Vector2(0, -431), 2).setEaseOutQuart().setLoopPingPong(1);
+        WeaponInfoBG.transform.LeanMoveLocal(new Vector2(0, -403), 2).setEaseOutQuart().setLoopPingPong(1);
+        Invoke("DeactivateWeaponInfo", 3f);
+    
+
+    }
+    private void DeactivateWeaponInfo()
+    {
+        //LeanTween.scale(WeaponName.gameObject, new Vector3(0, 0, 0), 0.5f);
+        //LeanTween.scale(WeaponDescription.gameObject, new Vector3(0, 0, 0), 0.5f);
+        //LeanTween.scale(WeaponInfoBG.gameObject, new Vector3(0f, 0f, 0f), 0.5f);
     }
 }

@@ -19,5 +19,7 @@ MonoBehaviour:
   Spread: 0
   NeedsToBeCharged: 0
   InfiniteAmmo: 0
-  ammoCasingAfterEachShot: 0
-  ejectMagazineOnReload: 0
+  AmmoCasingAfterEachShot: 0
+  EjectMagazineOnReload: 0
+  WeaponName: Pistol
+  WeaponDescription: Not a Toy

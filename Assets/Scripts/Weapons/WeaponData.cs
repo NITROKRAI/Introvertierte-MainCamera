@@ -15,4 +15,6 @@ public class WeaponData : ScriptableObject
     public bool InfiniteAmmo;
     public bool AmmoCasingAfterEachShot;
     public bool EjectMagazineOnReload;
+    public string WeaponName;
+    public string WeaponDescription;
 }
