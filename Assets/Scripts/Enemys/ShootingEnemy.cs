@@ -13,10 +13,11 @@ public class ShootingEnemy : MonoBehaviour
     public LayerMask whatIsGround, whatIsPlayer;
     private Vector3 walkPoint;
     private bool walkPointSet;
-    private float walkPointRange;
+    public float walkPointRange;
 
     public float sightRange, attackRange;
     private bool playerInSightRange, playerInAttackRange;
+    private bool attacked;
     private bool isInvincible;
 
     private void Awake()
@@ -31,7 +32,7 @@ public class ShootingEnemy : MonoBehaviour
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
         if (!playerInSightRange && !playerInAttackRange) Patroling();
-        if (playerInSightRange && !playerInAttackRange) ChasePlayer();
+        if (playerInSightRange && !playerInAttackRange || attacked) ChasePlayer();
         if (playerInAttackRange && playerInSightRange) Attack();
     }
 
@@ -89,8 +90,15 @@ public class ShootingEnemy : MonoBehaviour
         StartCoroutine(Invinciblity());
 
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player Bullet"))
+        {
+            attacked = true;
+        }
+    }
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);

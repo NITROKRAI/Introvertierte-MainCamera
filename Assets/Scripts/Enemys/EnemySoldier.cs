@@ -12,6 +12,7 @@ public class EnemySoldier : MonoBehaviour
     public float walkPointRange;
     public float sightRange;
     private bool playerInSightRange;
+    private bool attacked;
 
     private void Awake()
     {
@@ -24,7 +25,7 @@ public class EnemySoldier : MonoBehaviour
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
 
         if (!playerInSightRange) Patroling();
-        if (playerInSightRange) ChasePlayer();
+        if (playerInSightRange || attacked) ChasePlayer();
     }
 
     private void Patroling()
@@ -54,6 +55,14 @@ public class EnemySoldier : MonoBehaviour
     private void ChasePlayer()
     {
         agent.SetDestination(player.position);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player Bullet"))
+        {
+            attacked = true;
+        }
     }
 
     private void OnDrawGizmosSelected()

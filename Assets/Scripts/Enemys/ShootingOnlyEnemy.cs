@@ -13,6 +13,7 @@ public class ShootingOnlyEnemy : MonoBehaviour
 
     public Transform PlayerCheckPos;
     public float PlayerCheckRadios;
+    private bool attacked;
     private bool isInvincible;
 
     // Start is called before the first frame update
@@ -24,6 +25,11 @@ public class ShootingOnlyEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (attacked)
+        {
+            transform.LookAt(player);
+        }
+
         if (Physics.CheckSphere(PlayerCheckPos.position, PlayerCheckRadios, LayerMask.GetMask("Player")))
         {
             Attack();
@@ -76,7 +82,15 @@ public class ShootingOnlyEnemy : MonoBehaviour
         StartCoroutine(Invinciblity());
     }
 
-    private void OnDrawGizmos()
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player Bullet"))
+        {
+            attacked = true;
+        }
+    }
+
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(PlayerCheckPos.position, PlayerCheckRadios);
