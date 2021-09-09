@@ -6,7 +6,7 @@ public class DoorUp : MonoBehaviour
 {
     Rigidbody rb;
     public float Speed = 0.09f;
-    private bool isUnlocked = false;
+    [SerializeField]private bool isUnlocked = false;
     
     [SerializeField] private Transform[] movingPoints;
     [SerializeField] private AudioSource audioSource;
@@ -25,11 +25,11 @@ public class DoorUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isUnlocked)
+        if(isUnlocked && this.transform.position != endPosition)
         {
             OpenDoor();
         }
-        else
+        else if(!isUnlocked && this.transform.position != defaultPosition)
         {
             CloseDoor();
         }
@@ -51,12 +51,14 @@ public class DoorUp : MonoBehaviour
     }
 
     public void OpenDoor()
-    {        
+    {
+        Debug.Log("DoorUp");
         rb.MovePosition(Vector3.Lerp(transform.position,endPosition,Speed));
     }
 
     public void CloseDoor()
     {
+        Debug.Log("DoorDown");
         rb.MovePosition(Vector3.Lerp(transform.position, defaultPosition, Speed));
     }
 
