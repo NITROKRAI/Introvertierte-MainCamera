@@ -68,7 +68,7 @@ public class Bullet : MonoBehaviour
                 case "Enemy":
                     TriggerEnemy = other.gameObject;
                     TriggerEnemy.GetComponent<Enemy>().health -= Damage;
-                    TriggerEnemy.GetComponent<Enemy>().Hurt = true;
+                    TriggerEnemy.GetComponent<Enemy>().MakeDamageSound();
                     gameObject.SetActive(false);
                     break;
                 case "World":

@@ -14,14 +14,9 @@ public class Enemy: MonoBehaviour
 
     void Update()
     {
-        if (Hurt)
-        {
-            MakeDamageSound();
-        }
-
         Die();
     }
-    private void MakeDamageSound()
+    public void MakeDamageSound()
     {
         audioSource.PlayOneShot(enemyDamageSound);
         Hurt = false;
