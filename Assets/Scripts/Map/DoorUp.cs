@@ -53,11 +53,13 @@ public class DoorUp : MonoBehaviour
     public void OpenDoor()
     {
         rb.MovePosition(Vector3.Lerp(transform.position,endPosition,Speed));
+        audioSource.PlayOneShot(doorSound);
     }
 
     public void CloseDoor()
     {
         rb.MovePosition(Vector3.Lerp(transform.position, defaultPosition, Speed));
+        audioSource.PlayOneShot(doorSound);
     }
 
     public void Unlock()
