@@ -54,12 +54,14 @@ public class DoorUp : MonoBehaviour
     {
         Debug.Log("DoorUp");
         rb.MovePosition(Vector3.Lerp(transform.position,endPosition,Speed));
+        audioSource.PlayOneShot(doorSound);
     }
 
     public void CloseDoor()
     {
         Debug.Log("DoorDown");
         rb.MovePosition(Vector3.Lerp(transform.position, defaultPosition, Speed));
+        audioSource.PlayOneShot(doorSound);
     }
 
     public void Unlock()
