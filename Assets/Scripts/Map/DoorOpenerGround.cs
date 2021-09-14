@@ -30,7 +30,7 @@ public class DoorOpenerGround: MonoBehaviour
     
     private void OnTriggerExit(Collider col)
     {
-        transform.position = new Vector3(plate.x, plate.y, plate.z);
+        transform.position = plate;
 
         if (doorUp.IsUnlocked())
         {

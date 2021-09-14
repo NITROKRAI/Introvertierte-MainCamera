@@ -26,12 +26,5 @@ public class DoorOpenerGroundToggle : MonoBehaviour
                 doorUp.Unlock();
             }
         }
-    }
-
-    //private void OnTriggerExit(Collider col)
-    //{
-    //    transform.position = new Vector3(plate.x, plate.y, plate.z);
-
-    //    doorUp.Lock();
-    //}
+    }    
 }

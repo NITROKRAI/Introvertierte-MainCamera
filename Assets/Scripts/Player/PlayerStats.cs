@@ -95,7 +95,7 @@ public class PlayerStats : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         alreadyGetHeart = false;
     }
-    void TakeDamage()
+    public void TakeDamage()
     {
         Invincibility();
         CurrentHealth -= 1;

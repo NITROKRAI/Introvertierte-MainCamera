@@ -45,9 +45,7 @@ public class DoorUp : MonoBehaviour
             movingPoints[i] = transform.GetChild(i).transform;
         }
         defaultPosition = movingPoints[0].position;
-        endPosition = movingPoints[1].position;
-        //Debug.Log("default " + defaultPosition);
-        //Debug.Log("Open " + endPosition);
+        endPosition = movingPoints[1].position;        
     }
 
     public void OpenDoor()

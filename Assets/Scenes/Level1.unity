@@ -92989,6 +92989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf65ffaea86c5564fa319d1961cc9b73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  portalToScene: EndScene
 --- !u!43 &1823783474
 Mesh:
   m_ObjectHideFlags: 0
