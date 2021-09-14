@@ -55,7 +55,10 @@ public class PlayerMov : MonoBehaviour
         zAxis = Input.GetAxis("Vertical");
         dir = new Vector3(xAxis, 0, zAxis);
         dir.Normalize();
-
+        if(zAxis == 0 && zAxis == 0)
+        {
+            rb.velocity = new Vector3(0, 0, 0);
+        }
         rb.velocity = (new Vector3(dir.x * PlayerSpeed, 0, dir.z * PlayerSpeed));
     }
 
@@ -85,6 +88,8 @@ public class PlayerMov : MonoBehaviour
 
     IEnumerator Dashing()
     {
+        Instantiate(DashParticleSystem,transform.position,transform.rotation);
+        rb.velocity = new Vector3(0, 0, 0);
         isDashing = true;
         Data.IsInvincible = true;
         DashSound.Play();
