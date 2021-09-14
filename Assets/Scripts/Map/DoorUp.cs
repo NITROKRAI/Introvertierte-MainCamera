@@ -6,7 +6,7 @@ public class DoorUp : MonoBehaviour
 {
     Rigidbody rb;
     public float Speed = 0.09f;
-    [SerializeField]private bool isUnlocked = false;
+    [SerializeField]private bool isUnlocked = false;    
     
     [SerializeField] private Transform[] movingPoints;
     [SerializeField] private AudioSource audioSource;
@@ -25,15 +25,15 @@ public class DoorUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isUnlocked && this.transform.position != endPosition)
+        if (isUnlocked && rb.position != endPosition)
         {
             OpenDoor();
         }
-        else if(!isUnlocked && this.transform.position != defaultPosition)
+        else if (!isUnlocked && rb.position != defaultPosition)
         {
             CloseDoor();
         }
-        
+
     }
 
     //Start- und Zielstellung der Tür werden mit festen Punkten festgelegt
@@ -52,23 +52,23 @@ public class DoorUp : MonoBehaviour
 
     public void OpenDoor()
     {
-        Debug.Log("DoorUp");
         rb.MovePosition(Vector3.Lerp(transform.position,endPosition,Speed));
     }
 
     public void CloseDoor()
     {
-        Debug.Log("DoorDown");
         rb.MovePosition(Vector3.Lerp(transform.position, defaultPosition, Speed));
     }
 
     public void Unlock()
     {
         isUnlocked = true;
+        audioSource.PlayOneShot(doorSound);
     }
     public void Lock()
     {
         isUnlocked = false;
+        audioSource.PlayOneShot(doorSound);
     }
 
     public bool IsUnlocked()

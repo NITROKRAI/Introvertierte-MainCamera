@@ -20,8 +20,11 @@ public class DoorOpenerGroundToggle : MonoBehaviour
     private void OnTriggerEnter(Collider col)
     {
         if ((col.gameObject.tag == "Player") || (col.gameObject.tag == "Box"))
-        { 
-            doorUp.Unlock();
+        {
+            if (!doorUp.IsUnlocked())
+            {
+                doorUp.Unlock();
+            }
         }
     }
 

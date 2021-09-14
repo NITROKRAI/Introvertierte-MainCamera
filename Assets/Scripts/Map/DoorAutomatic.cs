@@ -24,11 +24,17 @@ public class DoorAutomatic : MonoBehaviour
     {
         if(enemys.Count == 0)
         {
-            doorUp.Unlock();
+            if (!doorUp.IsUnlocked())
+            {
+                doorUp.Unlock();
+            }
         }
         else
         {
-            doorUp.Lock();
+            if (doorUp.IsUnlocked())
+            {
+                doorUp.Lock();
+            }
         }
     }
 
