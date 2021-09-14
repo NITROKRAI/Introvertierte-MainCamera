@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy: MonoBehaviour
 {
-    public float Health;
+    public float health;
     public bool Hurt;
     [Range(0, 1)] public float HealthDropChance;
     public GameObject Heart;
@@ -29,7 +29,7 @@ public class Enemy: MonoBehaviour
 
     public void Die()
     {
-        if(Health <= 0f)
+        if(health <= 0f)
         {
             if (UnityEngine.Random.value < HealthDropChance)
             { Instantiate(Heart, transform.position, Quaternion.identity); }
