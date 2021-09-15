@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5007978262306820492}
   - component: {fileID: 4985027191022535246}
   m_Layer: 0
-  m_Name: Idol 3
+  m_Name: Bow
   m_TagString: World
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

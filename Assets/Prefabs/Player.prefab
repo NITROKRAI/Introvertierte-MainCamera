@@ -101,6 +101,7 @@ GameObject:
   - component: {fileID: 6273570337873475039}
   - component: {fileID: 6273570337873475008}
   - component: {fileID: 6273570337873475011}
+  - component: {fileID: 804548063}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -202,16 +203,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerSpeed: 13
   Data: {fileID: 11400000, guid: ac046c9dfdd12e74aaac6e806da74128, type: 2}
-  DashSpeed: 25
+  DashSpeed: 30
   DashTime: 0.2
   DashSound: {fileID: 6273570337873475008}
-  DashParticleSystem: {fileID: 0}
+  DashParticleSystem: {fileID: 8852873678563335275, guid: 4d01d9de8ecfc094091b7e597cc2b3e5, type: 3}
   stepSounds: []
   StepSound: {fileID: 0}
   TurnSpeed: 400
   LayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
+  GroundCheck: {fileID: 0}
 --- !u!114 &3702295328864661092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -434,6 +436,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &804548063
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3702295328864661094}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.429385, y: 1.5591047, z: 1.0479132}
+  m_Center: {x: -0.027103154, y: 0.044433117, z: 0.02551329}
 --- !u!1 &8688560540027030375
 GameObject:
   m_ObjectHideFlags: 0

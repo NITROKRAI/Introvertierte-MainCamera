@@ -29,9 +29,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3326715498361760786}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7, y: 1.5, z: 5}
-  m_LocalScale: {x: 1, y: 3, z: 4}
+  m_LocalScale: {x: 1, y: 5, z: 4}
   m_Children:
   - {fileID: 3326715499033580647}
   - {fileID: 3326715499119384073}
@@ -128,7 +128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afc33df79e03ae042acde8927da5e302, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.09
+  Speed: 0.09
+  isUnlocked: 0
   movingPoints: []
   audioSource: {fileID: 545317656050468874}
   doorSound: {fileID: 8300000, guid: fc9e378ac5ab04f40b42b2ed5b776ae1, type: 3}
@@ -300,7 +301,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3326715499119384078}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 0.33333334, z: 0.5}
   m_Children: []
   m_Father: {fileID: 3326715498361760878}
