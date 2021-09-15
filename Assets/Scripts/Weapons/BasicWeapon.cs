@@ -17,6 +17,7 @@ public class BasicWeapon : Weapon
     public GameObject[] BulletSpawnPoints = new GameObject[0];
     public ParticleSystem MuzleFlash;
     public ParticleSystem BulletCasing;
+    public GameObject BulletSpawnPointHolder;
     public float DamageReference;
     public float BulletDamage;
     public GameObject BulletCasingPosition;
@@ -27,6 +28,7 @@ public class BasicWeapon : Weapon
     public Image SpriteInHud;
     public Image ReloadInHud;
     public Text AmmoDisplay;
+
     
     // Start is called before the first frame update
     void Start()
@@ -53,6 +55,7 @@ public class BasicWeapon : Weapon
         AmmoDisplay.text = Ammo.ToString()+"/"+Data.Ammo;
         ShowReloadInHud();
         InputCheck();
+        RotateBulletSpawnPoints();
     }
 
     void InputCheck()
@@ -112,6 +115,18 @@ public class BasicWeapon : Weapon
             Bullet.SetActive(true);
             }
 
+        }
+    }
+    void RotateBulletSpawnPoints()
+    {
+        Ray ray = UnityEngine.Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out RaycastHit raycastHit, float.MaxValue))
+        {
+            Vector3 targetPoint = raycastHit.point;
+            Quaternion targetRotation = Quaternion.LookRotation(targetPoint - transform.position);
+            targetRotation.x = 0;
+            targetRotation.z = 0;
+            BulletSpawnPointHolder.transform.rotation = targetRotation;
         }
     }
 

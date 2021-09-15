@@ -22,6 +22,7 @@ public class PlayerMov : MonoBehaviour
     public float TurnSpeed;
     public LayerMask LayerMask;
     float test;
+    public GameObject GroundCheck;
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -29,7 +30,16 @@ public class PlayerMov : MonoBehaviour
 
     void Update()
     {
-        
+        //RaycastHit Hit;
+        //if (Physics.SphereCast(GroundCheck.transform.position,0.2f, GroundCheck.transform.position, out Hit))
+        //{
+        //    if(Hit.collider.CompareTag("World"))
+        //    {
+
+        //        //rb.AddForce(new Vector3(0, 5, 0).normalized * 6, ForceMode.Impulse);
+        //        Debug.Log("SHEEESH");
+        //    }
+        //}
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             if (!isDashing)
@@ -57,9 +67,9 @@ public class PlayerMov : MonoBehaviour
         dir.Normalize();
         if(zAxis == 0 && zAxis == 0)
         {
-            rb.velocity = new Vector3(0, 0, 0);
+            rb.velocity = new Vector3(0, rb.velocity.y, 0);
         }
-        rb.velocity = (new Vector3(dir.x * PlayerSpeed, 0, dir.z * PlayerSpeed));
+        rb.velocity = (new Vector3(dir.x * PlayerSpeed, rb.velocity.y , dir.z * PlayerSpeed));
     }
 
     private void RotatePlayer() //methode von Maik ps. Maik ist doof!
@@ -105,5 +115,11 @@ public class PlayerMov : MonoBehaviour
         }
         isDashing = false;
         Data.IsInvincible = false;
+    }
+    void OnDrawGizmosSelected()
+    {
+        // Draw a yellow sphere at the transform's position
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(GroundCheck.transform.position, 0.2f);
     }
 }
