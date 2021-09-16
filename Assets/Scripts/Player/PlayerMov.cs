@@ -66,7 +66,7 @@ public class PlayerMov : MonoBehaviour
         zAxis = Input.GetAxis("Vertical");
         dir = new Vector3(xAxis, 0, zAxis);
         dir.Normalize();
-        MakeStepSound();
+        //MakeStepSound();
         if(zAxis == 0 && zAxis == 0)
         {
             rb.velocity = new Vector3(0, rb.velocity.y, 0);
@@ -87,9 +87,9 @@ public class PlayerMov : MonoBehaviour
         }
     }
 
-    private void MakeStepSound()
-    {
-        StepSound.PlayOneShot(stepSounds[Random.Range(0, stepSounds.Length)]);
+    //private void MakeStepSound()
+    //{
+    //    StepSound.PlayOneShot(stepSounds[Random.Range(0, stepSounds.Length)]);
 
         //do
         //{
@@ -98,7 +98,7 @@ public class PlayerMov : MonoBehaviour
         //lastStepSound = newStepSound;        
         //
         //StepSound.PlayOneShot(stepSounds[lastStepSound]);
-    }
+    //
 
     IEnumerator Dashing()
     {
