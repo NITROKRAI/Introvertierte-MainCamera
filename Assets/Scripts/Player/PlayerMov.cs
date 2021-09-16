@@ -30,6 +30,7 @@ public class PlayerMov : MonoBehaviour
 
     void Update()
     {
+        
         //RaycastHit Hit;
         //if (Physics.SphereCast(GroundCheck.transform.position,0.2f, GroundCheck.transform.position, out Hit))
         //{
@@ -102,10 +103,7 @@ public class PlayerMov : MonoBehaviour
 
     IEnumerator Dashing()
     {
-        while(isDashing)
-        {
-            rb.velocity.y.Equals(0);
-        }
+        
         Instantiate(DashParticleSystem,transform.position,transform.rotation);
         rb.velocity = new Vector3(0, 0, 0);
         isDashing = true;
