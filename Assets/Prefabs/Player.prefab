@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &76751006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 76751007}
+  m_Layer: 3
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &76751007
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76751006}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.05, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3702295328864661093}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2293207923202297705
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,6 +151,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1991626338154966545}
+  - {fileID: 76751007}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
@@ -204,7 +235,7 @@ MonoBehaviour:
   PlayerSpeed: 13
   Data: {fileID: 11400000, guid: ac046c9dfdd12e74aaac6e806da74128, type: 2}
   DashSpeed: 30
-  DashTime: 0.2
+  DashTime: 0.3
   DashSound: {fileID: 6273570337873475008}
   DashParticleSystem: {fileID: 8852873678563335275, guid: 4d01d9de8ecfc094091b7e597cc2b3e5, type: 3}
   stepSounds: []
@@ -213,7 +244,7 @@ MonoBehaviour:
   LayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  GroundCheck: {fileID: 0}
+  GroundCheck: {fileID: 76751006}
 --- !u!114 &3702295328864661092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -516,6 +547,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8295739731796139395}
     m_Modifications:
+    - target: {fileID: 1542414663307049038, guid: 038c450c784648944b949b89a9a57ff3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1542414663307049038, guid: 038c450c784648944b949b89a9a57ff3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6080762567646082244, guid: 038c450c784648944b949b89a9a57ff3, type: 3}
+      propertyPath: m_Name
+      value: BulletEjectPos
+      objectReference: {fileID: 0}
     - target: {fileID: 6080762568766119412, guid: 038c450c784648944b949b89a9a57ff3, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -577,6 +620,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6080762568766119414, guid: 038c450c784648944b949b89a9a57ff3, type: 3}
+      propertyPath: BulletSpawnPointHolder
+      value: 
+      objectReference: {fileID: 3710290167267532497}
+    - target: {fileID: 6080762568766119414, guid: 038c450c784648944b949b89a9a57ff3, type: 3}
       propertyPath: BulletSpawnPoints.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -589,6 +636,11 @@ PrefabInstance:
 --- !u!4 &5759985049344407697 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6080762568766119412, guid: 038c450c784648944b949b89a9a57ff3, type: 3}
+  m_PrefabInstance: {fileID: 1985144830798341477}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3710290167267532497 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2950209099199626164, guid: 038c450c784648944b949b89a9a57ff3, type: 3}
   m_PrefabInstance: {fileID: 1985144830798341477}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &5759985048417972200 stripped

@@ -102,6 +102,10 @@ public class PlayerMov : MonoBehaviour
 
     IEnumerator Dashing()
     {
+        while(isDashing)
+        {
+            rb.velocity.y.Equals(0);
+        }
         Instantiate(DashParticleSystem,transform.position,transform.rotation);
         rb.velocity = new Vector3(0, 0, 0);
         isDashing = true;

@@ -13,10 +13,4 @@ public class MovingSawBlade : MonoBehaviour
         SawTarget = Endpoint.transform.position;
         transform.LeanMoveLocal(SawTarget, TravelTime).setEaseInOutQuad().setLoopPingPong();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

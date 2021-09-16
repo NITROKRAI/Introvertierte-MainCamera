@@ -5,6 +5,7 @@ using UnityEngine;
 public class FlamePillar : MonoBehaviour
 {
     public float RotationSpeed;
+    public bool IsActivated;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +15,9 @@ public class FlamePillar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.Rotate(new Vector3(0, RotationSpeed, 0) * Time.fixedDeltaTime);
+        if(IsActivated)
+        {
+            this.transform.Rotate(new Vector3(0, RotationSpeed, 0) * Time.fixedDeltaTime);
+        }
     }
 }
