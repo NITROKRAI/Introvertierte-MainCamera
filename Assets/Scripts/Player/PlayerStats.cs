@@ -35,13 +35,11 @@ public class PlayerStats : MonoBehaviour
         {
             GetHeart();
         }
-
-        if(other.gameObject.CompareTag("Enemy Bullet") && Data.IsInvincible == false)
+        else if (other.gameObject.CompareTag("Enemy Bullet") && Data.IsInvincible == false)
         {
             TakeDamage();
         }
-
-        if(other.gameObject.CompareTag("Trap") && Data.IsInvincible == false)
+        else if (other.gameObject.CompareTag("Trap") && Data.IsInvincible == false)
         {
             TakeDamage();
         }
