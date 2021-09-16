@@ -11,13 +11,13 @@ public class PlayerMov : MonoBehaviour
     public float DashSpeed;
     public float DashTime;
     private bool isDashing;
-    private int lastStepSound, newStepSound;
+    //private int lastStepSound, newStepSound;
     [SerializeField] AudioSource DashSound;
     [SerializeField] ParticleSystem DashParticleSystem;
     [SerializeField] AudioClip[] stepSounds;
     [SerializeField] AudioSource StepSound;
     Vector3 dir;
-    Vector3 velocity;
+    //Vector3 velocity;
     private Rigidbody rb;
     public float TurnSpeed;
     public LayerMask LayerMask;
@@ -40,6 +40,7 @@ public class PlayerMov : MonoBehaviour
         //        Debug.Log("SHEEESH");
         //    }
         //}
+
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             if (!isDashing)
@@ -65,6 +66,7 @@ public class PlayerMov : MonoBehaviour
         zAxis = Input.GetAxis("Vertical");
         dir = new Vector3(xAxis, 0, zAxis);
         dir.Normalize();
+        MakeStepSound();
         if(zAxis == 0 && zAxis == 0)
         {
             rb.velocity = new Vector3(0, rb.velocity.y, 0);
@@ -87,13 +89,15 @@ public class PlayerMov : MonoBehaviour
 
     private void MakeStepSound()
     {
-        do
-        {
-            newStepSound = Random.Range(0, stepSounds.Length - 1);
-        } while (newStepSound == lastStepSound);        
-        lastStepSound = newStepSound;        
-        
-        StepSound.PlayOneShot(stepSounds[lastStepSound]);
+        StepSound.PlayOneShot(stepSounds[Random.Range(0, stepSounds.Length)]);
+
+        //do
+        //{
+        //    newStepSound = Random.Range(0, stepSounds.Length - 1);
+        //} while (newStepSound == lastStepSound);        
+        //lastStepSound = newStepSound;        
+        //
+        //StepSound.PlayOneShot(stepSounds[lastStepSound]);
     }
 
     IEnumerator Dashing()

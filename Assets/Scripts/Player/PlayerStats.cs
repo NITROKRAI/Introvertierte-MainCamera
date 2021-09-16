@@ -9,6 +9,7 @@ public class PlayerStats : MonoBehaviour
     private bool alreadyGetHeart;
     public float ElapsedTime;    
     [SerializeField] AudioSource HurtSound;
+    [SerializeField] AudioSource PickUpSound;
     private Renderer r;
     // Start is called before the first frame update
     void Start()
@@ -33,13 +34,14 @@ public class PlayerStats : MonoBehaviour
         if (other.gameObject.CompareTag("Heart"))
         {
             GetHeart();
-            Debug.Log("PlayerHeart");
         }
-        else if(other.gameObject.CompareTag("Enemy Bullet") && Data.IsInvincible == false)
+
+        if(other.gameObject.CompareTag("Enemy Bullet") && Data.IsInvincible == false)
         {
             TakeDamage();
         }
-        else if(other.gameObject.CompareTag("Trap") && Data.IsInvincible == false)
+
+        if(other.gameObject.CompareTag("Trap") && Data.IsInvincible == false)
         {
             TakeDamage();
         }
@@ -57,11 +59,13 @@ public class PlayerStats : MonoBehaviour
         {
             return;
         }
+
         if (CurrentHealth < 6)
         {
             alreadyGetHeart = true;
             CurrentHealth += 1;
-            Debug.Log("LifeUp");
+            PickUpSound.Play();
+
             StartCoroutine(AlreadyGetHeart());
         }
         
