@@ -17,6 +17,8 @@ public class PickUpController : MonoBehaviour
     public Text WeaponDescription;
     public RawImage WeaponInfoBG;
     public bool PickedUpOnce = false;
+    public DoorUp doorUp;
+    public GameObject lockedDoor;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,7 @@ public class PickUpController : MonoBehaviour
         {
             WeaponScript.enabled = true;
             Mesh.SetActive(true);
+            doorUp = lockedDoor.GetComponent<DoorUp>();
         }
         else
         {
@@ -55,6 +58,10 @@ public class PickUpController : MonoBehaviour
         if (PickedUpOnce == false)
         {
             DisplayWeaponInfo();
+        }
+        if (!doorUp.IsUnlocked())
+        {
+            doorUp.Unlock();
         }
         Inv.ReloadInHud.fillAmount = 0;
         transform.SetParent(WeaponHolderTra);
