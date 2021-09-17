@@ -45,7 +45,7 @@ public class TrapActivater : MonoBehaviour
         Debug.Log("Trap is activ");
         isActivated = true;
         parent.position = activPosition;
-        audioSource.PlayOneShot(trapSound);
+        //audioSource.PlayOneShot(trapSound);
 
         yield return new WaitForSeconds(activationDuration);
 
