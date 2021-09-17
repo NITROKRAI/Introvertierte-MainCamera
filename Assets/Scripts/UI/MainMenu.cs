@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene("Level-Tutorial");
+        PlayerPrefs.SetInt("Health", 6);
     }
 
     public void OpenOptions()

@@ -15,7 +15,8 @@ public class PlayerStats : MonoBehaviour
     void Start()
     {
         Data.IsInvincible = false;
-        CurrentHealth = Data.Health;
+        Debug.Log(PlayerPrefs.GetInt("Health"));
+        CurrentHealth = GetHealth();
         r = gameObject.GetComponent<Renderer>();
     }
     // Update is called once per frame
@@ -27,6 +28,12 @@ public class PlayerStats : MonoBehaviour
         {
             Object.Destroy(this.gameObject);
         }
+    }
+
+    void OnDestroy()
+    {
+        Debug.Log("Player will be destroyed");
+        SetHealth();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -61,6 +68,7 @@ public class PlayerStats : MonoBehaviour
         if (CurrentHealth < 6)
         {
             alreadyGetHeart = true;
+            //Data.Health += 1;
             CurrentHealth += 1;
             PickUpSound.Play();
 
@@ -100,7 +108,17 @@ public class PlayerStats : MonoBehaviour
     public void TakeDamage()
     {
         Invincibility();
+        //Data.Health -= 1;
         CurrentHealth -= 1;
         HurtSound.Play();
+    }
+    public int GetHealth()
+    {
+        return PlayerPrefs.GetInt("Health");
+    }
+
+    public void SetHealth()
+    {
+        PlayerPrefs.SetInt("Health", CurrentHealth);
     }
 }
