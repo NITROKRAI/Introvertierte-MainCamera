@@ -12,8 +12,17 @@ EditorBuildSettings:
     path: Assets/Scenes/OptionMenu.unity
     guid: bdb4a119a733f704eba6c23d18183a54
   - enabled: 1
-    path: Assets/Scenes/Alt.unity
-    guid: 2f296ed24743f444eae41905105f88d1
+    path: Assets/Scenes/Level-Tutorial.unity
+    guid: 85c8d8f44a8e7714c89bb3a5103561f7
+  - enabled: 1
+    path: Assets/Scenes/Level1.unity
+    guid: 84dd7beb3064534489540c912725a748
+  - enabled: 1
+    path: Assets/Scenes/Level2.unity
+    guid: 277b2f8630bcb814da54b9eafae57a1f
+  - enabled: 1
+    path: Assets/Scenes/Level3.unity
+    guid: 741fd1f346865df44a15e52edaf205dc
   - enabled: 1
     path: Assets/Scenes/DeathScene.unity
     guid: 4d93c603eaca12a43a861b55fbe32ea7
