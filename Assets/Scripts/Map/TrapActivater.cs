@@ -7,8 +7,10 @@ public class TrapActivater : MonoBehaviour
     Transform parent;
     private bool isActivated = false;
     private Vector3 defaultPosition;
-    private Vector3 activPosition;    
+    private Vector3 activPosition;
+    private bool canActivate;
 
+    [SerializeField] private float WaitTime;
     [SerializeField] private float activationDuration;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip trapSound;
@@ -42,6 +44,8 @@ public class TrapActivater : MonoBehaviour
 
     private IEnumerator GetTemporarilyActivated()
     {
+        yield return new WaitForSeconds(WaitTime);
+
         Debug.Log("Trap is activ");
         isActivated = true;
         parent.position = activPosition;
