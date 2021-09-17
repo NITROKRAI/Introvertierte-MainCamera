@@ -19,6 +19,10 @@ public class WeaponSwitching : MonoBehaviour
         TotalWeapons = WeaponHolder.transform.childCount;
         Weapons = GameObject.FindGameObjectsWithTag("Equipped");
         CurrentWeapon = Weapons[CurrentWeaponIndex].transform.gameObject;
+        //if(CurrentWeapon.transform.childCount == 0)
+        //{
+        //    CurrentWeapon = WeaponHolder;
+        //}
     }
 
     // Update is called once per frame
@@ -44,11 +48,11 @@ public class WeaponSwitching : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
+                ReloadInHud.fillAmount = 0;
                 if (CurrentWeaponIndex < Weapons.Length - 1)
                 {
                     for (int i = 0; i < Weapons[CurrentWeaponIndex].transform.childCount; i++)
                     {
-                        ReloadInHud.fillAmount = 0;
                         var child = Weapons[CurrentWeaponIndex].transform.GetChild(i).gameObject;
                         if (child != null)
                         child.SetActive(false);
@@ -57,7 +61,6 @@ public class WeaponSwitching : MonoBehaviour
                     CurrentWeapon = Weapons[CurrentWeaponIndex].transform.gameObject;
                     for (int i = 0; i < Weapons[CurrentWeaponIndex].transform.childCount; i++)
                     {
-                        ReloadInHud.fillAmount = 0;
                         var child = Weapons[CurrentWeaponIndex].transform.GetChild(i).gameObject;
                         if (child != null)
                         child.SetActive(true);
