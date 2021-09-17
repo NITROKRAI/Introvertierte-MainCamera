@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PopUpWindow: {fileID: 0}
-  Width: 6
+  Width: 8
   Height: 3
   FadeInAndOutTime: 1
   PopUpText: Press Shift to Dash
