@@ -23,12 +23,12 @@ public class GameUI : MonoBehaviour
         {
             if (isPaused)
             {
-                Debug.Log("PauseCanceled");
+                //Debug.Log("PauseCanceled");
                 Continue();
             }
             else if(!isPaused)
             {
-                Debug.Log("PauseActivated");
+                //Debug.Log("PauseActivated");
                 Pause();
             }
         }
